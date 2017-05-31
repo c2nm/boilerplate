@@ -1,0 +1,11 @@
+h1
+{
+	font-size:32rem;
+	color: var(--color-red);
+}
+
+h2
+{
+	font-size:16rem;
+	color: var(--color-blue);
+}
