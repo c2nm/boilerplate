@@ -1,0 +1,25 @@
+/*
+inspired by https://zellwk.com/blog/viewport-based-typography/
+*/
+
+html {
+  font-size: 0.40px;
+}
+@media (min-width: 750px) {
+	html {
+		font-size: calc( 0.40px + (1 - 0.40) * (100vw - 750px) / (1920 - 750) );
+	}
+}
+@media (min-width: 1920px) {
+	html {
+		font-size: calc(1px);
+	}
+}
+body {
+	font-size:$base-font-size;
+}
+@media (max-width: 750px) {
+	html {
+		font-size: 0.70px;
+	}
+}

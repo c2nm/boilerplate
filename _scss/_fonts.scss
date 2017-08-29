@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500|Quicksand:300,400,500');
+
+html,
+body,
+button,
+input,
+select,
+textarea
+{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 500;
+}
+
+footer
+{
+    font-size: 19rem;
+    line-height: 25rem;
+    letter-spacing: 0.5px;
+	text-align:justify;
+}

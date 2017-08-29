@@ -31,10 +31,9 @@ input,
 select,
 textarea
 {
-	color: #000;
-	font-family: 'Calibri', sans-serif;	
+	color:$color-grey;
 	font-weight: normal;
-	line-height: 1.5;
+	line-height: 1.2;
 }
 
 textarea
@@ -45,12 +44,11 @@ textarea
 input, textarea
 {
     border-radius: 0;
-	border:1px solid #C1C1C1;
+	border:0;
 }
 
 input:focus, textarea:focus, select:focus
 {
-	border: 1px solid #22ABD6;
 	outline: none;
 }
 
@@ -86,16 +84,16 @@ a
 
 ::selection
 {
-	background:#B0971A;
+	background:$color-greenlight;
 	color:#ffffff;
 }
 ::-moz-selection
 {
-	background:#B0971A;
+	background:$color-greenlight;
 	color:#ffffff;
 }
 ::-webkit-selection
 {
-	background:#B0971A;
+	background:$color-greenlight;
 	color:#ffffff;
 }
