@@ -1,3 +1,4 @@
+import Helpers from './_helpers';
 import Class1 from './_class1';
 
 Class1.staticFunction();
@@ -7,11 +8,14 @@ c.dynamicFunction();
 alert(c.var1);
 
 /* run on document ready */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function()
+{
+    Helpers.fixMobileHeightInit();
     Class1.staticFunction();
 });
 /* run on window load */
-window.onload = function() {    
+window.onload = function()
+{    
     Class1.staticFunction();
 }
 /* make publically available to run from outside */
