@@ -2,6 +2,21 @@ import isMobile from 'ismobilejs';
 
 export default class Helpers {
 
+    static isMobile()
+    {
+        return isMobile.phone;
+    }
+
+    static isTablet()
+    {
+        return isMobile.tablet;   
+    }
+
+    static isTouch()
+    {
+        return 'ontouchstart' in window || navigator.maxTouchPoints;
+    }
+
     static fadeOut(el) {
         el.style.opacity = 1;
         (function fade() {
@@ -65,6 +80,7 @@ export default class Helpers {
     {
         var windowWidth = window.innerWidth;
         window.addEventListener('resize', () =>
+        {
             var windowWidthNew = window.innerWidth;
             if(windowWidthNew != windowWidth) {
                 windowWidth = windowWidthNew;
@@ -77,6 +93,7 @@ export default class Helpers {
     {
         var windowHeight = window.innerHeight;
         window.addEventListener('resize', () =>
+        {
             var windowHeightNew = window.innerHeight;
             if(windowHeightNew != windowHeight) {
                 windowHeight = windowHeightNew;
