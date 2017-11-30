@@ -1,6 +1,24 @@
 import isMobile from 'ismobilejs';
 
-export default class Helpers {
+export default class Helpers
+{
+
+    static isMobile()
+    {
+        // viewport width based and using isMobile library
+        if( window.innerWidth < 750 || isMobile.phone ) { return true; }
+        return false;
+    }
+
+    static isTablet()
+    {
+        return isMobile.tablet;   
+    }
+
+    static isTouch()
+    {
+        return 'ontouchstart' in window || navigator.maxTouchPoints;
+    } 
 
     static isMobile()
     {
@@ -17,10 +35,13 @@ export default class Helpers {
         return 'ontouchstart' in window || navigator.maxTouchPoints;
     }
 
-    static fadeOut(el) {
+    static fadeOut(el)
+    {
         el.style.opacity = 1;
-        (function fade() {
-            if ((el.style.opacity -= .1) < 0) {
+        (function fade()
+        {
+            if ((el.style.opacity -= .1) < 0)
+            {
                 el.style.display = "none";
             } else {
                 requestAnimationFrame(fade);
@@ -28,30 +49,36 @@ export default class Helpers {
         })();
     }
 
-    static fadeIn(el) {
+    static fadeIn(el)
+    {
         el.style.opacity = 0;
         el.style.display = "block";
-        (function fade() {
+        (function fade()
+        {
             var val = parseFloat(el.style.opacity);
-            if (!((val += .1) > 1)) {
+            if (!((val += .1) > 1))
+            {
                 el.style.opacity = val;
                 requestAnimationFrame(fade);
             }
         })();
     }
 
-    static scrollTo(element, duration) {
+    static scrollTo(element, duration)
+    {
         let to = (element.getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientTop),
             from = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop),
             by = (to-from),
             currentIteration = 0,
             animIterations = Math.round(60 * (duration/1000)); 
             console.log(to,from,by);
-        (function scroll() {
+        (function scroll()
+        {
             let value = Math.round(Helpers.easeInOutCirc(currentIteration, from, by, animIterations));
             document.documentElement.scrollTop = document.body.scrollTop = value;
             currentIteration++;
-            if (currentIteration < animIterations) {
+            if (currentIteration < animIterations)
+            {
                 requestAnimationFrame(scroll);
             }    
         })();
@@ -82,7 +109,8 @@ export default class Helpers {
         window.addEventListener('resize', () =>
         {
             var windowWidthNew = window.innerWidth;
-            if(windowWidthNew != windowWidth) {
+            if(windowWidthNew != windowWidth)
+            {
                 windowWidth = windowWidthNew;
                 fun();
             }
@@ -95,7 +123,8 @@ export default class Helpers {
         window.addEventListener('resize', () =>
         {
             var windowHeightNew = window.innerHeight;
-            if(windowHeightNew != windowHeight) {
+            if(windowHeightNew != windowHeight)
+            {
                 windowHeight = windowHeightNew;
                 fun();
             }
