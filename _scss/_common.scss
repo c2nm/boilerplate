@@ -14,6 +14,10 @@ div
         content:"";
     }
 }
+@mixin perf
+{
+    transform: translateZ(0);
+}
 @mixin title
 {
     font-weight:bold;
