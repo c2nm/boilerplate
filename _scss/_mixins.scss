@@ -1,0 +1,16 @@
+/* usage: 
+div
+{
+  ...
+  @include clearfix;
+}
+*/
+@mixin clearfix
+{
+    &:after
+    {
+        clear:both;
+        display:table;
+        content:"";
+    }
+}
