@@ -8,11 +8,13 @@ select,
 textarea
 {
 	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
+    font-weight: normal;
+    font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6
+@mixin font-heading
 {
 	font-family: 'Quicksand', sans-serif;
-	font-weight: 500;
+    font-weight: normal;
+    font-style: normal;
 }
