@@ -2,24 +2,37 @@
 inspired by https://zellwk.com/blog/viewport-based-typography/
 */
 
-html {
-  font-size: 0.40px;
+$rem_font_size_small: 0.6;
+$rem_breakpoint_small: 450;
+$rem_font_size_big: 1;
+$rem_breakpoint_big: 1920;
+
+/* 0px-750px: 1rem = 0.4px */
+html
+{
+    font-size: #{$rem_font_size_small}px;
 }
-@media (min-width: 750px) {
-	html {
-		font-size: calc( 0.40px + (1 - 0.40) * (100vw - 750px) / (1920 - 750) );
-	}
+
+/* 750px-1920px: 0.4px < 1rem < 1px */
+@media( min-width: #{$rem_breakpoint_small}px )
+{
+    html
+    {
+        font-size: calc( #{$rem_font_size_small}px + (#{$rem_font_size_big} - #{$rem_font_size_small}) * (100vw - #{$rem_breakpoint_small}px) / (#{$rem_breakpoint_big} - #{$rem_breakpoint_small}) );
+    }
 }
-@media (min-width: 1920px) {
-	html {
-		font-size: calc(1px);
-	}
+
+/* 1920px-above: 1rem = 1px */
+@media( min-width: #{$rem_breakpoint_big}px )
+{
+    html
+    {
+        font-size: calc( #{$rem_font_size_big}px );
+    }
 }
-body {
-	font-size: $font-size-small;
-}
-@media (max-width: 750px) {
-	html {
-		font-size: 0.70px;
-	}
+
+/* set the base font size to e.g. 16rem */
+body
+{
+    font-size: $font-size-small;
 }
