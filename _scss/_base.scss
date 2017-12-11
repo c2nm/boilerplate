@@ -1,7 +1,5 @@
 *, *:before, *:after
 {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -52,7 +50,8 @@ input:focus, textarea:focus, select:focus
 	outline: none;
 }
 
-::-moz-focus-inner {
+::-moz-focus-inner
+{
 	border:0;
 }
 
@@ -65,9 +64,6 @@ input[type="datetime-local"],
 textarea,
 select
 {
-    -webkit-appearance: none;
-    -moz-appearance:none;
-    -ms-appearance:none;
     appearance:none;
     border-radius: 0;
     box-shadow: none;
@@ -75,13 +71,14 @@ select
 
 select::-ms-expand
 {
-  display:none;
+    display:none;
 }
 
 a
 {
-  text-decoration:none;
-  color:inherit;
+    text-decoration:none;
+    color:inherit;
+    outline:none;
 }
 
 ::selection
