@@ -1,6 +1,6 @@
 # 📦 boilerplate 📦
 
-This is a boilerplate starter kit for rapid web development.
+this is a boilerplate starter kit for rapid web development.
 
 ## includes
 
