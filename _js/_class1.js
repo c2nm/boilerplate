@@ -17,3 +17,6 @@ export default class Class1 {
     }
     
 }
+
+/* make publically available to run from outside for debugging purposes */
+window.Class1 = Class1;

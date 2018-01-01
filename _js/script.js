@@ -13,10 +13,9 @@ document.addEventListener('DOMContentLoaded', function()
     Helpers.fixMobileHeightInit();
     Class1.staticFunction();
 });
+
 /* run on window load */
 window.onload = function()
 {    
     Class1.staticFunction();
 }
-/* make publically available to run from outside */
-window.Class1 = Class1;
