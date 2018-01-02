@@ -131,36 +131,42 @@ export default class Helpers
         });
     }
 
-    static get(url, callback)
+    static get(url)
     {
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = () =>
-        { 
-            if(xhr.readyState != 4 || xhr.status != 200)
-            {
-                return;
+        return new Promise((resolve, reject) =>
+        {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = () =>
+            { 
+                if(xhr.readyState != 4 || xhr.status != 200)
+                {
+                    reject([xhr.readyState, xhr.status, xhr.statusText]);
+                }
+                resolve(xhr.responseText);
             }
-            callback(xhr.responseText);
-        }
-        xhr.open( 'GET', url, true );            
-        xhr.send( null );
+            xhr.open( 'GET', url, true );            
+            xhr.send( null );
+        });
     }
 
-    static post(url, data, callback)
+    static post(url, data)
     {
-        let xhr = new XMLHttpRequest();
-        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.onreadystatechange = () =>
+        return new Promise((resolve, reject) =>
         {
-            if(xhr.readyState != 4 || xhr.status != 200)
+            let xhr = new XMLHttpRequest();
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.onload = () =>
             {
-                return;
+                if(xhr.readyState != 4 || xhr.status != 200)
+                {
+                    reject(xhr.statusText);
+                }
+                resolve(xhr.responseText);
             }
-            callback(xhr.responseText);
-        }
-        xhr.open( 'POST', url, true );
-        xhr.send( JSON.stringify(data) );
+            xhr.open( 'POST', url, true );
+            xhr.send( JSON.stringify(data) );
+        });
     }
 
 }
