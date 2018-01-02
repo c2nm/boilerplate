@@ -131,6 +131,18 @@ export default class Helpers
         });
     }
 
+    static parseJson(string)
+    {
+        try
+        {
+            return JSON.parse(string);
+        }
+        catch(error)
+        {
+            return string;
+        }
+    }
+
     static get(url)
     {
         return new Promise((resolve, reject) =>
@@ -142,7 +154,7 @@ export default class Helpers
                 {
                     reject([xhr.readyState, xhr.status, xhr.statusText]);
                 }
-                resolve(xhr.responseText);
+                resolve(this.parseJson(xhr.responseText));
             }
             xhr.open( 'GET', url, true );            
             xhr.send( null );
@@ -160,7 +172,7 @@ export default class Helpers
             {
                 if(xhr.readyState != 4 || xhr.status != 200)
                 {
-                    reject(xhr.statusText);
+                    reject(this.parseJson(xhr.statusText));
                 }
                 resolve(xhr.responseText);
             }
