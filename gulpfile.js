@@ -19,7 +19,7 @@ gulp.task('js', function(){
         entries: ['./_js/script.js']
     })
     .transform(babelify.configure({
-        presets : ['es2015']
+        presets : ['es2015', 'es2017']
     }))
     .bundle()
     .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
