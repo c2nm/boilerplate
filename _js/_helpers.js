@@ -143,51 +143,57 @@ export default class Helpers
         }
     }
 
-    static get(url, success, error)
+    static get(url, success, error, throttle = 0)
     {
         let xhr = new XMLHttpRequest();
         xhr.onload = () =>
         { 
-            if(xhr.readyState != 4 || xhr.status != 200)
+            setTimeout(() =>
             {
-                error([xhr.readyState, xhr.status, xhr.statusText]);
-            }
-            success(this.parseJson(xhr.responseText));
+                if(xhr.readyState != 4 || xhr.status != 200)
+                {
+                    error([xhr.readyState, xhr.status, xhr.statusText]);
+                }
+                success(this.parseJson(xhr.responseText));
+            }, throttle);
         }
         xhr.open( 'GET', url, true );            
         xhr.send( null );
     }
 
-    static post(url, data, success, error)
+    static post(url, data, success, error, throttle = 0)
     {
         let xhr = new XMLHttpRequest();
         xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onload = () =>
         {
-            if(xhr.readyState != 4 || xhr.status != 200)
+            setTimeout(() =>
             {
-                error(this.parseJson(xhr.statusText));
-            }
-            success(xhr.responseText);
+                if(xhr.readyState != 4 || xhr.status != 200)
+                {
+                    error(this.parseJson(xhr.statusText));
+                }
+                success(xhr.responseText);
+            }, throttle);
         }
         xhr.open( 'POST', url, true );
         xhr.send( JSON.stringify(data) );
     }
 
-    static getWithPromise(url)
+    static getWithPromise(url, throttle = 0)
     {
         return new Promise((resolve, reject) =>
         {
-            this.get(url, (v) => { resolve(v); }, (v) => { reject(v); });
+            this.get(url, (v) => { resolve(v); }, (v) => { reject(v); }, throttle);
         });
     }
 
-    static postWithPromise(url, data)
+    static postWithPromise(url, data, throttle = 0)
     {
         return new Promise((resolve, reject) =>
         {
-            this.post(url, data, (v) => { resolve(v); }, (v) => { reject(v); });
+            this.post(url, data, (v) => { resolve(v); }, (v) => { reject(v); }, throttle);
         });
     }
 
