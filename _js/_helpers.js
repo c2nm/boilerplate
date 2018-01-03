@@ -143,41 +143,51 @@ export default class Helpers
         }
     }
 
-    static get(url)
+    static get(url, success, error)
+    {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = () =>
+        { 
+            if(xhr.readyState != 4 || xhr.status != 200)
+            {
+                error([xhr.readyState, xhr.status, xhr.statusText]);
+            }
+            success(this.parseJson(xhr.responseText));
+        }
+        xhr.open( 'GET', url, true );            
+        xhr.send( null );
+    }
+
+    static post(url, data, success, error)
+    {
+        let xhr = new XMLHttpRequest();
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.onload = () =>
+        {
+            if(xhr.readyState != 4 || xhr.status != 200)
+            {
+                error(this.parseJson(xhr.statusText));
+            }
+            success(xhr.responseText);
+        }
+        xhr.open( 'POST', url, true );
+        xhr.send( JSON.stringify(data) );
+    }
+
+    static getWithPromise(url)
     {
         return new Promise((resolve, reject) =>
         {
-            let xhr = new XMLHttpRequest();
-            xhr.onload = () =>
-            { 
-                if(xhr.readyState != 4 || xhr.status != 200)
-                {
-                    reject([xhr.readyState, xhr.status, xhr.statusText]);
-                }
-                resolve(this.parseJson(xhr.responseText));
-            }
-            xhr.open( 'GET', url, true );            
-            xhr.send( null );
+            this.get(url, (v) => { resolve(v); }, (v) => { reject(v); });
         });
     }
 
-    static post(url, data)
+    static postWithPromise(url, data)
     {
         return new Promise((resolve, reject) =>
         {
-            let xhr = new XMLHttpRequest();
-            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            xhr.onload = () =>
-            {
-                if(xhr.readyState != 4 || xhr.status != 200)
-                {
-                    reject(this.parseJson(xhr.statusText));
-                }
-                resolve(xhr.responseText);
-            }
-            xhr.open( 'POST', url, true );
-            xhr.send( JSON.stringify(data) );
+            this.post(url, data, (v) => { resolve(v); }, (v) => { reject(v); });
         });
     }
 
