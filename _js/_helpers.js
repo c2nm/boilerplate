@@ -150,11 +150,11 @@ export default class Helpers
             let xhr = new XMLHttpRequest();
             xhr.onload = () =>
             { 
-                    if(xhr.readyState != 4 || xhr.status != 200)
-                    {
-                        error([xhr.readyState, xhr.status, xhr.statusText]);
-                    }
-                    success(this.parseJson(xhr.responseText));
+                if(xhr.readyState != 4 || xhr.status != 200)
+                {
+                    error([xhr.readyState, xhr.status, xhr.statusText]);
+                }
+                success(this.parseJson(xhr.responseText));
             }
             xhr.onerror = () =>
             {  
@@ -168,17 +168,17 @@ export default class Helpers
     static post(url, data, success, error, throttle = 0)
     {
         setTimeout(() =>
+        {
             let xhr = new XMLHttpRequest();
             xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.onload = () =>
             {
+                if(xhr.readyState != 4 || xhr.status != 200)
                 {
-                    if(xhr.readyState != 4 || xhr.status != 200)
-                    {
-                        error(this.parseJson(xhr.statusText));
-                    }
-                    success(xhr.responseText);
+                    error(this.parseJson(xhr.statusText));
+                }
+                success(xhr.responseText);
             }
             xhr.onerror = () =>
             {  
