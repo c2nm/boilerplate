@@ -7,9 +7,9 @@ this is a boilerplate starter kit for rapid web development.
 * [gulp](http://gulpjs.com)
 * [Babel (es2017)](https://babeljs.io)
 * [Sass (with sourcemaps and autoprefixing)](http://sass-lang.com)
-* minification of html, js and css
 * [Browsersync](https://www.browsersync.io)
 * [Vue.js](https://vuejs.org)
+* minification of html, js and css
 
 ## installation
 
