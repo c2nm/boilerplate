@@ -2,6 +2,7 @@
 var gulp = require('gulp'),
     babelify = require('babelify'),
     browserify = require('browserify'),
+    vueify = require('gulp-vueify'),
     source = require('vinyl-source-stream'),
     htmlmin = require('gulp-htmlmin'),
     sass = require('gulp-sass'),
@@ -11,6 +12,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     buffer = require('vinyl-buffer'),
+    runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create();
 	
 // js
@@ -58,13 +60,23 @@ gulp.task('html', function() {
     .pipe(browserSync.reload({stream: true}));
 });
 
+// vue
+gulp.task('vue', function () {
+  return gulp.src('./_vue/**/*.vue')
+    .pipe(vueify())
+    .pipe(gulp.dest('./_vue'));
+});
+
 // watch
 gulp.task('watch', function() {
 	browserSync.init({ proxy: 'www.tld.local' });
     gulp.watch('./_js/*.js', ['js']);    
     gulp.watch('./_scss/**/*.scss', ['css']);
     gulp.watch('./_html/*.html', ['html']);
+    gulp.watch('./_vue/*.vue', function() {
+        runSequence('vue','js');
+    });
 });
 
 // default
-gulp.task('default', ['js','css','html','watch']);
+gulp.task('default', ['js','css','html','vue','watch']);

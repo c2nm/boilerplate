@@ -9,7 +9,7 @@ export default class Class1 {
 
     static staticFunction() {
         alert('foo');
-        Helpers.scrollTo(document.querySelector('footer'),1000);
+        //Helpers.scrollTo(document.querySelector('footer'),1000);
     }
 
     dynamicFunction() {
