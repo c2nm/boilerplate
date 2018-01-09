@@ -150,7 +150,7 @@ export default class Helpers
             let xhr = new XMLHttpRequest();
             xhr.onload = () =>
             { 
-                if(xhr.readyState != 4 || xhr.status != 200)
+                if(xhr.readyState != 4 || (xhr.status != 200 && xhr.status != 304))
                 {
                     error([xhr.readyState, xhr.status, xhr.statusText]);
                 }
@@ -174,7 +174,7 @@ export default class Helpers
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.onload = () =>
             {
-                if(xhr.readyState != 4 || xhr.status != 200)
+                if(xhr.readyState != 4 || (xhr.status != 200 && xhr.status != 304))
                 {
                     error(this.parseJson(xhr.statusText));
                 }
