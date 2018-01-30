@@ -214,4 +214,9 @@ export default class Helpers
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
     }
 
+    static isObject(obj)
+    {
+        return (obj !== null && typeof obj === 'object');
+    }
+
 }
