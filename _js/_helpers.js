@@ -219,4 +219,15 @@ export default class Helpers
         return (obj !== null && typeof obj === 'object');
     }
 
+    static textareaAutoHeight(el)
+    {
+        el.style.height = '5px';
+        el.style.height = (el.scrollHeight)+'px';
+        el.addEventListener('keyup', (e) =>
+        {
+            el.style.height = '5px';
+            el.style.height = (el.scrollHeight)+'px';
+        });
+    }
+
 }
