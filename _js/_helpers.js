@@ -219,14 +219,20 @@ export default class Helpers
         return (obj !== null && typeof obj === 'object');
     }
 
-    static textareaAutoHeight(el)
+    static textareaAutoHeight(selector)
     {
-        el.style.height = '5px';
-        el.style.height = (el.scrollHeight)+'px';
-        el.addEventListener('keyup', (e) =>
+        [].forEach.call(document.querySelectorAll(selector), (el) =>
         {
             el.style.height = '5px';
-            el.style.height = (el.scrollHeight)+'px';
+            el.style.height = (el.scrollHeight)+'px';            
+        });
+        document.addEventListener('keyup', function(e)
+        {
+            if(e.target && e.target.tagName === 'TEXTAREA')
+            {
+                e.target.style.height = '5px';
+                e.target.style.height = (e.target.scrollHeight)+'px';
+            }
         });
     }
 
