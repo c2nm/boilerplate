@@ -221,19 +221,34 @@ export default class Helpers
 
     static textareaAutoHeight(selector)
     {
-        [].forEach.call(document.querySelectorAll(selector), (el) =>
+        function setHeight(el)
         {
             el.style.height = '5px';
             el.style.height = (el.scrollHeight)+'px';            
+        }
+        function setAllHeight(selector)
+        {
+            [].forEach.call(document.querySelectorAll(selector), (el) =>
+            {
+                setHeight(el);
+            });
+        }
+
+        setAllHeight(selector);
+
+        window.addEventListener('resize', () =>
+        {
+            setAllHeight(selector);
         });
-        document.addEventListener('keyup', function(e)
+
+        document.addEventListener('keyup', (e) =>
         {
             if(e.target && e.target.tagName === 'TEXTAREA')
             {
-                e.target.style.height = '5px';
-                e.target.style.height = (e.target.scrollHeight)+'px';
+                setHeight(e.target);
             }
         });
+        
     }
 
 }
