@@ -219,33 +219,43 @@ export default class Helpers
         return (obj !== null && typeof obj === 'object');
     }
 
+    static isVisible(el)
+    {
+        return !!( el.offsetWidth || el.offsetHeight || el.getClientRects().length );
+    }
+
+    static textareaSetHeight(el)
+    {
+        el.style.height = '5px';
+        el.style.height = (el.scrollHeight)+'px';   
+    }
+
+    static textareaSetHeights(selector)
+    {
+        [].forEach.call(document.querySelectorAll(selector), (el) =>
+        {
+            if( this.isVisible(el) )
+            {
+                this.textareaSetHeight(el);
+            }
+        });
+    }
+
     static textareaAutoHeight(selector)
     {
-        function setHeight(el)
-        {
-            el.style.height = '5px';
-            el.style.height = (el.scrollHeight)+'px';            
-        }
-        function setAllHeight(selector)
-        {
-            [].forEach.call(document.querySelectorAll(selector), (el) =>
-            {
-                setHeight(el);
-            });
-        }
 
-        setAllHeight(selector);
+        this.textareaSetHeights(selector);
 
         window.addEventListener('resize', () =>
         {
-            setAllHeight(selector);
+            this.textareaSetHeights(selector);
         });
 
         document.addEventListener('keyup', (e) =>
         {
             if(e.target && e.target.tagName === 'TEXTAREA')
             {
-                setHeight(e.target);
+                this.textareaSetHeight(e.target);
             }
         });
         
