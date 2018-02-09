@@ -9,6 +9,7 @@ this is a boilerplate starter kit for rapid web development.
 * [Sass (with sourcemaps and autoprefixing)](http://sass-lang.com)
 * [Browsersync](https://www.browsersync.io)
 * [Vue.js](https://vuejs.org)
+* [eslint](https://eslint.org)
 * minification of html, js and css
 
 ## installation
