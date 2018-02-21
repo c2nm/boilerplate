@@ -224,6 +224,11 @@ export default class Helpers
         return !!( el.offsetWidth || el.offsetHeight || el.getClientRects().length );
     }
 
+    static isDate(string)
+    {
+        return (new Date(string) !== 'Invalid Date') && !isNaN(new Date(string));
+    }
+
     static textareaSetHeight(el)
     {
         el.style.height = '5px';
