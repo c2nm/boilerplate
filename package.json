@@ -10,6 +10,8 @@
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
+    "gulp-jest": "^4.0.2",
+    "jest-cli": "^22.4.2",
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {

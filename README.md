@@ -10,6 +10,7 @@ this is a boilerplate starter kit for rapid web development.
 * [Browsersync](https://www.browsersync.io)
 * [Vue.js](https://vuejs.org)
 * [eslint](https://eslint.org)
+* [Jest](https://github.com/facebook/jest)
 * minification of html, js and css
 
 ## installation
