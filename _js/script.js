@@ -25,9 +25,9 @@ import Vue from 'vue/dist/vue.js'; // import runtime+template compiler
 import App from '../_vue/App.js';
 document.addEventListener('DOMContentLoaded', function()
 {
-const vue = new Vue({
-    el: '#vue',
-    template: '<App/>',
-    components: { App }
-});
+    const vue = new Vue({
+        el: '#vue',
+        template: '<App/>',
+        components: { App }
+    });
 });

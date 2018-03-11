@@ -2,3 +2,4 @@
 /node_modules/
 /_vue/*.js
 /_tests/_build/
+/package-lock.json
