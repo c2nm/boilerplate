@@ -72,7 +72,7 @@ gulp.task('vue', function()
     return gulp
         .src('./_vue/**/*.vue')
         .pipe(vueify())
-        .pipe(gulp.dest('./_vue'));
+        .pipe(gulp.dest('./_vue/_build'));
 });
 
 // tests

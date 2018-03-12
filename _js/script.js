@@ -22,12 +22,9 @@ window.onload = function()
 /* Vue.js */
 //import Vue from 'vue'; // import runtime only
 import Vue from 'vue/dist/vue.js'; // import runtime+template compiler 
-import App from '../_vue/App.js';
-document.addEventListener('DOMContentLoaded', function()
-{
-    const vue = new Vue({
-        el: '#vue',
-        template: '<App/>',
-        components: { App }
-    });
+import App from '../_vue/_build/App.js';
+const vm = new Vue({
+    el: '#app',
+    template: '<App/>',
+    components: { App }
 });
