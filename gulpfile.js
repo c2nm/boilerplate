@@ -68,21 +68,23 @@ gulp.task('js', function()
 });
 
 // js (tests)
-gulp.task('js-test', function()
+gulp.task('js-test-babel', function()
+{
+    return browserify({
+            entries: ['./_tests/_js/script.js']
+        })
+        .transform(babelify.configure({
+            presets : ['es2015', 'es2017'],
+            plugins : ['transform-runtime']
+        }))
+        .bundle()
+        .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
+        .pipe(source('bundle.test.js'))
+        .pipe(buffer())
+        .pipe(gulp.dest('./_tests/_build'));
+});
+gulp.task('js-test-jest', function()
 {   
-    browserify({
-        entries: ['./_tests/_js/script.js']
-    })
-    .transform(babelify.configure({
-        presets : ['es2015', 'es2017'],
-        plugins : ['transform-runtime']
-    }))
-    .bundle()
-    .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
-    .pipe(source('bundle.test.js'))
-    .pipe(buffer())
-    .pipe(gulp.dest('./_tests/_build'));
-
     return gulp
         .src('_tests/_build')
         .pipe(jest({
@@ -91,6 +93,10 @@ gulp.task('js-test', function()
             ],
             'automock': false
         }));
+});
+gulp.task('js-test', function()
+{
+    return runSequence('js-test-babel','js-test-jest');
 });
 
 // js (babel)
