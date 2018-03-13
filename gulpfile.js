@@ -99,7 +99,7 @@ gulp.task('js-babel', function()
     /* use this, if you want to export js as a module that
     can be published on npm and/or imported via "import" */
     return gulp
-        .src('./_js/**/*.js')
+        .src('./_js/*.js')
         .pipe(babel({
             presets : ['es2015', 'es2017'],
             plugins : ['transform-runtime']
