@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     vueify = require('gulp-vueify');
-	
+    
 // html
 gulp.task('html', function()
 {
@@ -124,7 +124,7 @@ gulp.task('watch', function()
     gulp.watch('./_js/*.js', function() { runSequence('js','js-babel','js-test'); });  
     gulp.watch('./_tests/_js/*.js', ['js-test']);
     gulp.watch('./_vue/*.vue', function() { runSequence('vue','js','js-babel','js-test'); });
-	//browserSync.init({ proxy: 'www.tld.local' });
+    //browserSync.init({ proxy: 'www.tld.local' });
 });
 
 // default
