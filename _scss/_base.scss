@@ -73,6 +73,11 @@ select
     box-shadow: none;
 }
 
+select
+{
+    background-color:#fff;
+}
+
 select::-ms-expand
 {
     display:none;
