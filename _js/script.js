@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function()
 });
 
 /* run on window load */
-window.onload = function()
+window.addEventListener('load', function(e)
 {    
     //Class1.staticFunction();
-}
+}, false);
 
 /* Vue.js */
 //import Vue from 'vue'; // import runtime only
