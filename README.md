@@ -11,6 +11,7 @@ this is a boilerplate starter kit for rapid web development.
 * [Vue.js](https://vuejs.org)
 * [eslint](https://eslint.org)
 * [Jest](https://github.com/facebook/jest)
+* [hlp](https://github.com/vielhuber/hlp)
 * minification of html, js and css
 
 ## installation

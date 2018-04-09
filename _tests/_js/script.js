@@ -1,7 +1,6 @@
-import Helpers from './../../_js/_helpers';
+import hlp from 'hlp';
 
 test('adds 1 + 2 to equal 3', () => {
-    expect( Helpers.isObject({}) ).toBe(true);
-    expect(1+2).toBe(3);
-    
+    expect( hlp.isObject({}) ).toBe(true);
+    expect(1+2).toBe(3);    
 });

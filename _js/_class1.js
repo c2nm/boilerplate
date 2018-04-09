@@ -1,4 +1,4 @@
-import Helpers from './_helpers';
+import hlp from 'hlp';
 
 export default class Class1 {
 
@@ -9,7 +9,7 @@ export default class Class1 {
 
     static staticFunction() {
         alert('foo');
-        //Helpers.scrollTo(document.querySelector('footer'),1000);
+        //hlp.scrollTo(document.querySelector('footer'),1000);
     }
 
     dynamicFunction() {

@@ -1,4 +1,4 @@
-import Helpers from './_helpers';
+import hlp from 'hlp';
 import Class1 from './_class1';
 
 //Class1.staticFunction();
@@ -6,10 +6,11 @@ import Class1 from './_class1';
 //c.dynamicFunction();
 //alert(c.var1);
 
+console.log(hlp.capitalize('foo'));
+
 /* run on document ready */
 document.addEventListener('DOMContentLoaded', function()
 {
-    //Helpers.fixMobileHeightInit();
     //Class1.staticFunction();
 });
 
