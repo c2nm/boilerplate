@@ -13,6 +13,7 @@ this is a boilerplate starter kit for rapid web development.
 * [Jest](https://github.com/facebook/jest)
 * [hlp](https://github.com/vielhuber/hlp)
 * minification of html, js and css
+* bundling of external libs
 
 ## installation
 

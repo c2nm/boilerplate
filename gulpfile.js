@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     browserSync = require('browser-sync').create(),
     cleanCSS = require('gulp-clean-css'),
+    concat = require('gulp-concat'),
     htmlmin = require('gulp-htmlmin'),
     jest = require('gulp-jest').default,
     rename = require('gulp-rename'),
@@ -17,6 +18,16 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     vueify = require('gulp-vueify');
     
+var libs = {
+    js: [
+        '_plugins/library1/script.js',
+        '_plugins/library2/script.min.js'
+    ],
+    css: [
+        '_plugins/library2/style.min.css'
+    ]
+}
+
 // html
 gulp.task('html', function()
 {
@@ -122,16 +133,35 @@ gulp.task('vue', function()
         .pipe(gulp.dest('./_vue/_build'));
 });
 
+// libs
+gulp.task('js-libs', function()
+{
+  return gulp
+        .src(libs.js.concat(['_build/bundle.js']))
+        .pipe(concat('bundle.js'))
+        .pipe(gulp.dest('./_build/'));
+});
+gulp.task('css-libs', function()
+{
+  return gulp
+        .src(libs.css.concat(['_build/bundle.css']))
+        .pipe(concat('bundle.css'))
+        .pipe(gulp.dest('./_build/'));
+});
+
 // watch
 gulp.task('watch', function()
 {
-    gulp.watch('./_html/*.html', ['html']);
-    gulp.watch('./_scss/**/*.scss', ['css']);
-    gulp.watch('./_js/*.js', function() { runSequence('js','js-babel','js-test'); });  
-    gulp.watch('./_tests/_js/*.js', ['js-test']);
-    gulp.watch('./_vue/*.vue', function() { runSequence('vue','js','js-babel','js-test'); });
+    gulp.watch('./_html/*.html', function() { runSequence('html'); });
+    gulp.watch('./_scss/**/*.scss', function() { runSequence('css','css-libs'); });
+    gulp.watch('./_js/*.js', function() { runSequence('js','js-babel','js-test','js-libs'); });
+    gulp.watch('./_tests/_js/*.js', function() { runSequence('js-test'); });
+    gulp.watch('./_vue/*.vue', function() { runSequence('vue','js','js-babel','js-test','js-libs'); });
     //browserSync.init({ proxy: 'www.tld.local' });
 });
 
 // default
-gulp.task('default', ['html','css','js','js-babel','js-test','vue','watch']);
+gulp.task('default', function()
+{
+    runSequence('html','css','css-libs','js','js-babel','js-test','vue','js-libs','watch');   
+});
