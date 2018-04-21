@@ -18,6 +18,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     vueify = require('gulp-vueify');
     
+// external libs
 var libs = {
     js: [
         '_plugins/library1/script.js',
