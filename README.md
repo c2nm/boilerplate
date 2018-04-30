@@ -25,6 +25,7 @@ unzip master.zip -d .
 mv boilerplate-master/{.[!.],}* .
 rm -r boilerplate-master
 rm master.zip
+rm README.md
 npm install
 gulp
 ```
