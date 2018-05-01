@@ -9,13 +9,13 @@ import Class1 from './_class1';
 console.log(hlp.capitalize('foo'));
 
 /* run on document ready */
-document.addEventListener('DOMContentLoaded', function()
+document.addEventListener('DOMContentLoaded', () =>
 {
     //Class1.staticFunction();
 });
 
 /* run on window load */
-window.addEventListener('load', function(e)
+window.addEventListener('load', (e) =>
 {    
     //Class1.staticFunction();
 }, false);
