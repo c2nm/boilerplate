@@ -14,6 +14,7 @@ this is a boilerplate starter kit for rapid web development.
 * [hlp](https://github.com/vielhuber/hlp)
 * minification of html, js and css
 * bundling of external libs
+* extracting of critical css for [above-the-fold-content](https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent)
 
 ## installation
 

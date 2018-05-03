@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     buffer = require('vinyl-buffer'),
     browserify = require('browserify'),
     browserSync = require('browser-sync').create(),
+    criticalCss = require('gulp-penthouse'),
     cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'),
     htmlmin = require('gulp-htmlmin'),
@@ -58,6 +59,20 @@ gulp.task('css', function()
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./_build'))
         .pipe(browserSync.stream());
+});
+
+// css (critical)
+gulp.task('css-critical', function () {
+    return gulp.src('./_build/bundle.css')
+        .pipe(criticalCss({
+            out: 'build-critical.css',
+            url: 'http://www.tld.local',
+            width: 1920,
+            height: 1080,
+            strict: true,
+            userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+        }))
+        .pipe(gulp.dest('./_build/'));
 });
 
 // js (browser)
@@ -154,7 +169,7 @@ gulp.task('css-libs', function()
 gulp.task('watch', function()
 {
     gulp.watch('./_html/*.html', function() { runSequence('html'); });
-    gulp.watch('./_scss/**/*.scss', function() { runSequence('css','css-libs'); });
+    gulp.watch('./_scss/**/*.scss', function() { runSequence('css','css-libs','css-critical'); });
     gulp.watch('./_js/*.js', function() { runSequence('js','js-babel','js-test','js-libs'); });
     gulp.watch('./_tests/_js/*.js', function() { runSequence('js-test'); });
     gulp.watch('./_vue/*.vue', function() { runSequence('vue','js','js-babel','js-test','js-libs'); });
@@ -164,5 +179,5 @@ gulp.task('watch', function()
 // default
 gulp.task('default', function()
 {
-    runSequence('html','css','css-libs','js','js-babel','js-test','vue','js-libs','watch');   
+    runSequence('html','css','css-libs','css-critical','js','js-babel','js-test','vue','js-libs','watch');   
 });

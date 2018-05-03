@@ -22,6 +22,7 @@
     "gulp-connect": "^5.0.0",
     "gulp-htmlmin": "^4.0.0",
     "gulp-jest": "^4.0.2",
+    "gulp-penthouse": "^0.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.0",
