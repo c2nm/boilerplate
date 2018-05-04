@@ -81,7 +81,7 @@ div
 }
 
 /* and nested content */
-@include responsive-big
+@mixin responsive-big
 {
     @media screen and (max-width: $breakpoint-big)
     {  
@@ -89,7 +89,7 @@ div
     }      
 }
 
-@include responsive-small
+@mixin responsive-small
 {
     @media screen and (max-width: $breakpoint-small)
     {  
