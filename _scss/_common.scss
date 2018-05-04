@@ -35,6 +35,28 @@ div
     &:first-child { margin-top:0; }
 }
 
+@mixin valign
+{
+    text-align: center;
+    white-space: nowrap;
+    font-size:0;
+    &:before
+    {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    & > *
+    {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        font-size: $font-size;
+        white-space:normal;
+    }
+}
+
 /* you also can include subclasses */
 @mixin content
 {
