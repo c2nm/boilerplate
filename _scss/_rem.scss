@@ -3,17 +3,17 @@ inspired by https://zellwk.com/blog/viewport-based-typography/
 */
 
 $rem_font_size_small: 0.6;
-$rem_breakpoint_small: 450;
+$rem_breakpoint_small: 320;
 $rem_font_size_big: 1;
 $rem_breakpoint_big: 1920;
 
-/* 0px-750px: 1rem = 0.4px */
+/* 0px-320px: 1rem = 0.4px */
 html
 {
     font-size: #{$rem_font_size_small}px;
 }
 
-/* 750px-1920px: 0.4px < 1rem < 1px */
+/* 320px-1920px: 0.4px < 1rem < 1px */
 @media( min-width: #{$rem_breakpoint_small}px )
 {
     html
