@@ -18,7 +18,7 @@ html
 {
     html
     {
-        font-size: calc( #{$rem_font_size_small}px + (#{$rem_font_size_big} - #{$rem_font_size_small}) * (100vw - #{$rem_breakpoint_small}px) / (#{$rem_breakpoint_big} - #{$rem_breakpoint_small}) );
+        font-size: calc( #{$rem_font_size_small}px + #{$rem_font_size_big - $rem_font_size_small} * (100vw - #{$rem_breakpoint_small}px) / #{$rem_breakpoint_big - $rem_breakpoint_small} );
     }
 }
 
