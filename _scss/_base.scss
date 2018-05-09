@@ -18,13 +18,22 @@ html
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -ms-text-size-adjust: 100%;
-    overflow-y:scroll;
-    overflow-x:hidden;
 }
 
 body
 {
     min-height:100%;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+/* iphone/ipad prevent overflow-x */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 768px)
+{
+    html
+    {
+        overflow-x:hidden;
+    }
 }
 
 html,
@@ -96,23 +105,30 @@ a
 	background:$color-greenlight;
 	color:#ffffff;
 }
+
 ::-moz-selection
 {
 	background:$color-greenlight;
 	color:#ffffff;
 }
+
 ::-webkit-selection
 {
 	background:$color-greenlight;
 	color:#ffffff;
 }
 
-:invalid {
+:invalid
+{
   box-shadow: none;
 }
-:-moz-submit-invalid {
+
+:-moz-submit-invalid
+{
   box-shadow: none;
 }
-:-moz-ui-invalid {
+
+:-moz-ui-invalid
+{
   box-shadow:none;
 }
