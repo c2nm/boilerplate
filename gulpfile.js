@@ -83,7 +83,7 @@ gulp.task('js', function()
         })
         .transform(babelify.configure({
             presets : ['es2015', 'es2017'],
-            plugins : ['transform-runtime']
+            plugins : ['transform-runtime','array-includes']
         }))
         .bundle()
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
@@ -102,7 +102,7 @@ gulp.task('js-test-babel', function()
         })
         .transform(babelify.configure({
             presets : ['es2015', 'es2017'],
-            plugins : ['transform-runtime']
+            plugins : ['transform-runtime','array-includes']
         }))
         .bundle()
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
@@ -135,7 +135,7 @@ gulp.task('js-babel', function()
         .src('./_js/*.js')
         .pipe(babel({
             presets : ['es2015', 'es2017'],
-            plugins : ['transform-runtime']
+            plugins : ['transform-runtime','array-includes']
         }))
         .pipe(gulp.dest('./_js/_build'));
 });
