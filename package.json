@@ -4,7 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
-    "babel-plugin-array-includes": "^2.0.3"
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-polyfill": "^6.26.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

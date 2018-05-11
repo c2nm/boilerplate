@@ -1,5 +1,6 @@
 import hlp from 'hlp';
 import Class1 from './_class1';
+import 'babel-polyfill'; // use Array.includes etc. in IE11
 
 //Class1.staticFunction();
 //let c = new Class1();
