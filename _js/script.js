@@ -1,25 +1,13 @@
 import hlp from 'hlp';
-import Class1 from './_class1';
+import Page from './_page';
 import 'babel-polyfill'; // use Array.includes etc. in IE11
 
-//Class1.staticFunction();
-//let c = new Class1();
-//c.dynamicFunction();
-//alert(c.var1);
-
-console.log(hlp.capitalize('foo'));
-
-/* run on document ready */
 document.addEventListener('DOMContentLoaded', () =>
 {
-    //Class1.staticFunction();
+    let page = new Page();
+    page.init();    
+    window.page = page;
 });
-
-/* run on window load */
-window.addEventListener('load', (e) =>
-{    
-    //Class1.staticFunction();
-}, false);
 
 /* Vue.js */
 //import Vue from 'vue'; // import runtime only
