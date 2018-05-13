@@ -65,7 +65,7 @@ gulp.task('css', function()
 gulp.task('css-critical', function () {
     return gulp.src('./_build/bundle.css')
         .pipe(criticalCss({
-            out: 'build-critical.css',
+            out: 'bundle-critical.css',
             url: 'http://www.tld.local',
             width: 1920,
             height: 1080,
