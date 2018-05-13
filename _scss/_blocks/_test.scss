@@ -1,6 +1,10 @@
 .test
 {
-
+    .title
+    {
+        /* always use this approach to handle common styles (include the common style in every place needed) */
+        @include title;
+    }
 }
 
 @media screen and (max-width: $breakpoint-big)
