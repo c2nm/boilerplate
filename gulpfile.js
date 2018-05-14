@@ -69,7 +69,8 @@ gulp.task('css-critical', function () {
             url: 'http://www.tld.local',
             width: 1920,
             height: 1080,
-            strict: true,
+            strict: false,
+            renderWaitTime: 800,
             userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
         }))
         .pipe(gulp.dest('./_build/'));
