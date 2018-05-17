@@ -9,6 +9,16 @@ document.addEventListener('DOMContentLoaded', () =>
     window.page = page;
 });
 
+window.addEventListener('load',(e) =>
+{
+
+}, false);
+/* alert: when using the technique with loadCSS, use this instead */
+hlp.waitUntil('.footer','position','relative').then(() =>
+{
+
+});
+
 /* Vue.js */
 //import Vue from 'vue'; // import runtime only
 import Vue from 'vue/dist/vue.js'; // import runtime+template compiler 
