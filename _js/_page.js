@@ -32,7 +32,7 @@ export default class Class1
 
     initGoogleAnalytics()
     {
-        if(navigator.userAgent.indexOf('Speed Insights') === -1)
+        if(navigator.userAgent.indexOf('Speed Insights') > -1)
         {
             return;
         }

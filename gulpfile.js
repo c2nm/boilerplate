@@ -73,6 +73,7 @@ gulp.task('css-critical', function () {
             renderWaitTime: 800,
             userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
         }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./_build/'));
 });
 
