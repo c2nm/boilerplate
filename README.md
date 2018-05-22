@@ -15,6 +15,8 @@ this is a boilerplate starter kit for rapid web development.
 * minification of html, js and css
 * bundling of external libs
 * extracting of critical css for [above-the-fold-content](https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent)
+* deferred loading of google analytics
+* google page speed 100/100 ready
 
 ## installation
 
