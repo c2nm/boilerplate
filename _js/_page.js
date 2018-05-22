@@ -13,6 +13,7 @@ export default class Class1
     {
         await this.loadScripts();
         this.addEnvironment();
+        this.initGoogleAnalytics();
     }
 
     loadScripts()
