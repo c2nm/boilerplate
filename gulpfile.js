@@ -83,10 +83,8 @@ gulp.task('js', function()
     return browserify({
             entries: ['./_js/script.js']
         })
-        .transform(babelify.configure({
-            presets : ['es2015', 'es2017'],
-            plugins : ['transform-runtime']
-        }))
+        /* configuration is in .babelrc */
+        .transform(babelify)
         .transform(vueify)
         .bundle()
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
@@ -103,10 +101,8 @@ gulp.task('js-test-babel', function()
     return browserify({
             entries: ['./_tests/_js/script.js']
         })
-        .transform(babelify.configure({
-            presets : ['es2015', 'es2017'],
-            plugins : ['transform-runtime']
-        }))
+        /* configuration is in .babelrc */
+        .transform(babelify)
         .bundle()
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
         .pipe(source('bundle.test.js'))
