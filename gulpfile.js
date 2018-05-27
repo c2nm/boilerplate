@@ -162,7 +162,7 @@ gulp.task('watch', function()
     gulp.watch('./_scss/**/*.scss', function() { runSequence('css','css-libs','css-critical'); });
     gulp.watch('./_js/*.js', function() { runSequence('js','js-babel','js-test','js-libs'); });
     gulp.watch('./_tests/_js/*.js', function() { runSequence('js-test'); });
-    gulp.watch('./_vue/*.vue', function() { runSequence('js','js-babel','js-test','js-libs'); });
+    gulp.watch('./_vue/**/*.vue', function() { runSequence('js','js-babel','js-test','js-libs'); });
     //browserSync.init({ proxy: 'www.tld.local' });
 });
 
