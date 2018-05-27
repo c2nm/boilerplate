@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Test from './Test'
+import Test from './Test.vue'
 export default {
     name: 'App',
     data: function() {

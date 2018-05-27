@@ -17,7 +17,7 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    vueify = require('gulp-vueify');
+    vueify = require('vueify');
     
 // external libs
 var libs = {
@@ -66,7 +66,7 @@ gulp.task('css-critical', function () {
     return gulp.src('./_build/bundle.css')
         .pipe(criticalCss({
             out: 'bundle-critical.css',
-            url: 'http://www.tld.local',
+            url: 'http://www.tld.com',
             width: 1920,
             height: 1080,
             strict: false,
@@ -87,6 +87,7 @@ gulp.task('js', function()
             presets : ['es2015', 'es2017'],
             plugins : ['transform-runtime']
         }))
+        .transform(vueify)
         .bundle()
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
         .pipe(source('bundle.js'))
@@ -142,15 +143,6 @@ gulp.task('js-babel', function()
         .pipe(gulp.dest('./_js/_build'));
 });
 
-// vue
-gulp.task('vue', function()
-{
-    return gulp
-        .src('./_vue/**/*.vue')
-        .pipe(vueify())
-        .pipe(gulp.dest('./_vue/_build'));
-});
-
 // libs
 gulp.task('js-libs', function()
 {
@@ -174,12 +166,12 @@ gulp.task('watch', function()
     gulp.watch('./_scss/**/*.scss', function() { runSequence('css','css-libs','css-critical'); });
     gulp.watch('./_js/*.js', function() { runSequence('js','js-babel','js-test','js-libs'); });
     gulp.watch('./_tests/_js/*.js', function() { runSequence('js-test'); });
-    gulp.watch('./_vue/*.vue', function() { runSequence('vue','js','js-babel','js-test','js-libs'); });
+    gulp.watch('./_vue/*.vue', function() { runSequence('js','js-babel','js-test','js-libs'); });
     //browserSync.init({ proxy: 'www.tld.local' });
 });
 
 // default
 gulp.task('default', function()
 {
-    runSequence('html','css','css-libs','css-critical','js','js-babel','js-test','vue','js-libs','watch');   
+    runSequence('html','css','css-libs','css-critical','js','js-babel','js-test','js-libs','watch');   
 });
