@@ -1,23 +1,24 @@
 // include modules
-var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
-    babel = require('gulp-babel'),
-    babelify = require('babelify'),
-    buffer = require('vinyl-buffer'),
-    browserify = require('browserify'),
-    browserSync = require('browser-sync').create(),
-    criticalCss = require('gulp-penthouse'),
-    cleanCSS = require('gulp-clean-css'),
-    concat = require('gulp-concat'),
-    htmlmin = require('gulp-htmlmin'),
-    jest = require('gulp-jest').default,
-    rename = require('gulp-rename'),
-    runSequence = require('run-sequence'),
-    sass = require('gulp-sass'),
-    source = require('vinyl-source-stream'),
-    sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify'),
-    vueify = require('vueify');
+var gulp            = require('gulp'),
+    autoprefixer    = require('gulp-autoprefixer'),
+    babel           = require('gulp-babel'),
+    babelify        = require('babelify'),
+    buffer          = require('vinyl-buffer'),
+    browserify      = require('browserify'),
+    browserSync     = require('browser-sync').create(),
+    criticalCss     = require('gulp-penthouse'),
+    cleanCSS        = require('gulp-clean-css'),
+    concat          = require('gulp-concat'),
+    htmlmin         = require('gulp-htmlmin'),
+    jest            = require('gulp-jest').default,
+    rename          = require('gulp-rename'),
+    runSequence     = require('run-sequence'),
+    sass            = require('gulp-sass'),
+    source          = require('vinyl-source-stream'),
+    sourcemaps      = require('gulp-sourcemaps'),
+    through         = require('through-gulp'),
+    uglify          = require('gulp-uglify'),
+    vueify          = require('vueify');
     
 // external libs
 var libs = {
@@ -29,6 +30,9 @@ var libs = {
         '_plugins/library2/style.min.css'
     ]
 }
+
+// disable minification
+var devMode = false;
 
 // html
 gulp.task('html', function()
@@ -56,7 +60,7 @@ gulp.task('css', function()
         }))
         .pipe(sourcemaps.write())
         .pipe(rename('bundle.css'))
-        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(devMode ? through() : cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./_build'))
         .pipe(browserSync.stream());
 });
@@ -90,7 +94,7 @@ gulp.task('js', function()
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
         .pipe(source('bundle.js'))
         .pipe(buffer())
-        .pipe(uglify()).on('error', function(e){ console.log(e); })
+        .pipe(devMode ? through() : uglify()).on('error', function(e){ console.log(e); })
         .pipe(gulp.dest('./_build'))
         .pipe(browserSync.reload({stream: true}));
 });
@@ -169,4 +173,11 @@ gulp.task('watch', function()
 gulp.task('default', function()
 {
     runSequence('html','css','css-libs','css-critical','js','js-babel','js-test','js-libs','watch');   
+});
+
+// dev
+gulp.task('dev', function()
+{
+    devMode = true;
+    runSequence('default');    
 });

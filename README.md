@@ -32,3 +32,10 @@ rm README.md
 npm install
 gulp
 ```
+
+## usage
+
+```
+gulp dev
+gulp
+```
