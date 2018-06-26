@@ -140,6 +140,7 @@ gulp.task('js-babel', function()
             presets : ['es2015', 'es2017'],
             plugins : ['transform-runtime']
         }))
+        .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
         .pipe(gulp.dest('./_js/_build'));
 });
 
