@@ -121,7 +121,8 @@ gulp.task('js-test-jest', function()
             'preprocessorIgnorePatterns': [
                 '<rootDir>/dist/', '<rootDir>/node_modules/'
             ],
-            'automock': false
+            'automock': false,
+            'preset': 'jest-puppeteer'
         }));
 });
 gulp.task('js-test', function()

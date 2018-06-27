@@ -1,6 +1,22 @@
 import hlp from 'hlp';
 
-test('adds 1 + 2 to equal 3', () => {
+describe('Test group 1', () =>
+{
+  test('{} should be an object', () =>
+  {
     expect( hlp.isObject({}) ).toBe(true);
-    expect(1+2).toBe(3);    
+  });
+});
+
+describe('Test puppeteer', () =>
+{
+  beforeAll(async () =>
+  {
+    await page.goto('https://google.com')
+  });
+
+  it('should display "google" text on page', async () =>
+  {
+    await expect(page).toMatch('google')
+  });
 });
