@@ -160,6 +160,14 @@ gulp.task('css-libs', function()
         .pipe(gulp.dest('./_build/'));
 });
 
+// copy (if needed)
+gulp.task('copy', function ()
+{
+    gulp.src('./source/file1.txt').pipe(gulp.dest('./target/'));
+    gulp.src('./source/file2.txt').pipe(gulp.dest('./target/'));
+    gulp.src('./source/file3.txt').pipe(gulp.dest('./target/'));
+});
+
 // watch
 gulp.task('watch', function()
 {
@@ -167,6 +175,7 @@ gulp.task('watch', function()
     gulp.watch('./_scss/**/*.scss', function() { runSequence('css','css-libs','css-critical'); });
     gulp.watch(['./_js/*.js', './_vue/**/*.vue', './_vue/**/*.js'], function() { runSequence('js','js-babel','js-test','js-libs'); });
     gulp.watch('./_tests/_js/*.js', function() { runSequence('js-test'); });
+    //gulp.watch('./source/*.*', function() { runSequence('copy'); });
     //browserSync.init({ proxy: 'www.tld.local' });
 });
 
