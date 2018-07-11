@@ -1,37 +1,39 @@
 <template>
-    <div id="app">
-        <p>{{ name }}</p>
-        <button @click="changeName">changeName</button>
-        <Test></Test>
-    </div>
+<div id="app">
+    <p>{{ name }}</p>
+    <button @click="changeName">changeName</button>
+    <Test></Test>
+</div>
 </template>
 
 <script>
-import Test from './Test.vue'
+import Test from './Test.vue';
 export default {
     name: 'App',
-    data: function() {
+    data() {
         return {
             name: 'David'
         }
     },
+    components: {
+        Test
+    },
     methods: {
-        changeName: function()
-        {
-            this.name = 'David2'
+        changeName() {
+            this.name = 'David2';
         }
     },
     computed: {
-
+      
     },
-    components: {
-        Test
+    created() {
+    
     }
 }
 </script>
 
 <style>
 body {
-  font-family: Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 </style>

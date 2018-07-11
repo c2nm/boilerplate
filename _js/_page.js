@@ -67,7 +67,7 @@ export default class Class1
         script.innerHTML += 'var gtag = function() { dataLayer.push(arguments); };';
         script.innerHTML += 'gtag(\'js\', new Date());';
         // send page view
-        script.innerHTML += 'gtag(\'config\', '+property+', { \'anonymize_ip\': true });';
+        script.innerHTML += 'gtag(\'config\', \''+property+'\', { \'anonymize_ip\': true });';
         document.head.appendChild(script);
     }
     
