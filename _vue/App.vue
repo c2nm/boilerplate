@@ -2,7 +2,7 @@
     <div id="app">
         <p>{{ name }}</p>
         <button @click="changeName">changeName</button>
-        <Test></Test>
+        <app-test></app-test>
     </div>
 </template>
 
@@ -17,7 +17,7 @@
             }
         },
         components: {
-            Test
+            'app-test': Test
         },
         methods: {
             changeName() {
