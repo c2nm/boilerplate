@@ -6,7 +6,7 @@
 html, body
 {
 	width:100%;
-	background-color: #FFF;
+	background-color: $color-white;
 }
 
 html
@@ -85,7 +85,7 @@ select
 
 select
 {
-    background-color:#fff;
+    background-color: $color-white;
 }
 
 select::-ms-expand
@@ -103,19 +103,19 @@ a
 ::selection
 {
 	background:$color-greenlight;
-	color:#ffffff;
+	color: $color-white;
 }
 
 ::-moz-selection
 {
 	background:$color-greenlight;
-	color:#ffffff;
+	color: $color-white;
 }
 
 ::-webkit-selection
 {
 	background:$color-greenlight;
-	color:#ffffff;
+	color: $color-white;
 }
 
 :invalid
