@@ -35,7 +35,15 @@ gulp
 
 ## usage
 
+currently this is based on gulp:
+
 ```
 gulp dev
 gulp
+```
+
+the whole features are also now inside npm scripts:
+
+```
+npm run build
 ```

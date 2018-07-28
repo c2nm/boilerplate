@@ -35,6 +35,8 @@
     "jest": "^23.4.1",
     "jest-cli": "^23.4.1",
     "jest-puppeteer": "^3.2.1",
+    "node-sass": "^4.9.2",
+    "npm-run-all": "^4.1.3",
     "puppeteer": "^1.6.0",
     "run-sequence": "^2.2.1",
     "through-gulp": "^0.5.0",
@@ -46,7 +48,13 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css": "node-sass --output-style compressed ./_scss/style.scss ./_build/bundle.css",
+    "js:browserify": "browserify ./_js/script.js --outfile ./_build/bundle.js --debug --transform babelify",
+    "js:uglify": "uglifyjs --compress --mangle --output ./_build/bundle.js ./_build/bundle.js",
+    "js": "npm-run-all --sequential js:browserify js:uglify",
+    "watch:css": "watch \"npm run css\" ./_scss/ --interval=0.1",
+    "watch:js": "watch \"npm run js\" ./_js/ --interval=0.1",
+    "build": "npm-run-all --parallel watch:*"
   },
   "author": "",
   "license": "ISC"
