@@ -142,7 +142,7 @@ gulp.task('js-babel', function()
             plugins : ['transform-runtime']
         }))
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
-        .pipe(gulp.dest('./_js/_build'));
+        .pipe(gulp.dest('./_build/_js'));
 });
 
 // libs
