@@ -17,6 +17,7 @@ this is a boilerplate starter kit for rapid web development.
 * extracting of critical css for [above-the-fold-content](https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent)
 * deferred loading of google analytics
 * google page speed 100/100 ready
+* full ie11 support
 
 ## installation
 
