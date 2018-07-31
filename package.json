@@ -50,7 +50,8 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "vue": "^2.5.16",
-    "vueify-insert-css": "^1.0.0"
+    "vueify-insert-css": "^1.0.0",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {},
   "scripts": {
