@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () =>
 {
     let page = new Page();
     page.init();    
+    /* make publically available to run from outside for debugging purposes */
     window.page = page;
 });
 
