@@ -20,3 +20,4 @@ describe('Test puppeteer', () =>
     await expect(page).toMatch('google')
   }, 3000);
 });
+

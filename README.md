@@ -18,6 +18,7 @@ this is a boilerplate starter kit for rapid web development.
 * deferred loading of google analytics
 * google page speed 100/100 ready
 * full ie11 support
+* [Prettier](https://github.com/prettier/prettier) and [Prettier PHP Plugin](https://github.com/prettier/plugin-php)
 
 ## installation
 
