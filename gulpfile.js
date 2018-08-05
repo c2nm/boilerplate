@@ -23,11 +23,11 @@ var gulp            = require('gulp'),
 // external libs
 var libs = {
     js: [
-        '_plugins/library1/script.js',
-        '_plugins/library2/script.min.js'
+        '_libs/library1/script.js',
+        '_libs/library2/script.min.js'
     ],
     css: [
-        '_plugins/library2/style.min.css'
+        '_libs/library2/style.min.css'
     ]
 }
 
