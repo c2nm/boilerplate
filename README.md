@@ -1,11 +1,12 @@
 # 📦 boilerplate 📦
 
-this is a boilerplate starter kit for rapid web development. it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternatively on [gulp](http://gulpjs.com).
+this is a boilerplate starter kit for rapid web development.  
+it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternatively on [gulp](http://gulpjs.com).
 
 ## includes
 
 * [Babel (es2017)](https://babeljs.io)
-* [Sass (+sourcemaps/autoprefixing)](http://sass-lang.com)
+* [Sass](http://sass-lang.com) (+sourcemaps/autoprefixing)
 * [Browsersync](https://www.browsersync.io)
 * [Vue.js](https://vuejs.org)
 * [eslint](https://eslint.org)
@@ -46,7 +47,7 @@ npm install
 npm run build
 ```
 
-### gulp
+### gulp (legacy)
 
 ```
 gulp
