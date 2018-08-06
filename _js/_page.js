@@ -21,7 +21,7 @@ export default class Class1
         let tplurl = hlp.url(); // if wordpress, this is set in header
         // some libs need to be loaded dynamically and not concatenated via gulp
         return hlp.loadJs([
-            tplurl+'/_plugins/library2/script.min.js'
+            tplurl+'/_libs/library2/script.min.js'
         ]);
     }
 
