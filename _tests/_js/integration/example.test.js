@@ -1,13 +1,3 @@
-import hlp from 'hlp';
-
-describe('Test group 1', () =>
-{
-  test('{} should be an object', () =>
-  {
-    expect( hlp.isObject({}) ).toBe(true);
-  }, 3000);
-});
-
 describe('Test puppeteer', () =>
 {
   beforeAll(async () =>
@@ -20,4 +10,3 @@ describe('Test puppeteer', () =>
     await expect(page).toMatch('google')
   }, 3000);
 });
-

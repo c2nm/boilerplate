@@ -10,7 +10,7 @@ it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternative
 * [Browsersync](https://www.browsersync.io)
 * [Vue.js](https://vuejs.org)
 * [eslint](https://eslint.org)
-* [Jest](https://github.com/facebook/jest) with [Puppeteer](https://github.com/smooth-code/jest-puppeteer)
+* [Jest](https://github.com/facebook/jest) (unit/integration/regression tests with [Puppeteer](https://github.com/smooth-code/jest-puppeteer))
 * [hlp](https://github.com/vielhuber/hlp)
 * [Prettier](https://github.com/prettier/prettier) and [Prettier PHP Plugin](https://github.com/prettier/plugin-php)
 

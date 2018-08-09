@@ -4,3 +4,4 @@
 /_js/_build/
 /_tests/_build/
 /package-lock.json
+__image_snapshots__
