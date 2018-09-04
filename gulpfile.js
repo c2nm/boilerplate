@@ -139,7 +139,7 @@ gulp.task('js-babel', function()
         .src('./_js/*.js')
         .pipe(babel({
             presets : ['es2015', 'es2017'],
-            plugins : ['transform-runtime']
+            plugins : ['transform-runtime','transform-class-properties']
         }))
         .on('error', function(err) { console.log(err.toString()); this.emit('end'); })
         .pipe(gulp.dest('./_build/_js'));
