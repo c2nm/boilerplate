@@ -103,7 +103,7 @@ gulp.task('js', function()
 gulp.task('js-test-babel', function()
 {
     return browserify({
-            entries: ['./_tests/_js/script.js']
+            entries: ['./_tests/_js/unit/example.test.js']
         })
         /* configuration is in .babelrc */
         .transform(babelify)

@@ -1,14 +1,14 @@
 import hlp from 'hlp';
-import Page from './_page';
+import Page from './Page';
 import 'babel-polyfill'; // use Array.includes etc. in IE11
 import 'whatwg-fetch'; // use fetch
 
 document.addEventListener('DOMContentLoaded', () =>
 {
-    let page = new Page();
+    const page = new Page();
     page.init();    
     /* make publically available to run from outside for debugging purposes */
-    window.page = page;
+    window.app = page;
 });
 
 window.addEventListener('load',(e) =>

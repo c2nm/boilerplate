@@ -1,7 +1,10 @@
 import hlp from 'hlp';
 
-export default class Class1
+export default class Page
 {
+
+    var3 = 'this also works!';
+    static var4 = 'this also!';
 
     constructor()
     {
