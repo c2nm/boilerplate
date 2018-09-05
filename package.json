@@ -13,7 +13,7 @@
         "js:babel": "npx babel ./_js/ --out-dir ./_build/_js/ --plugins=transform-runtime,transform-class-properties,transform-object-rest-spread --presets=es2015,es2017",
         "js:libs": "find ./_libs -name \"*.js\" | xargs cat | uglifyjs --output ./_build/libs.js && cat ./_build/bundle.js >> ./_build/libs.js && mv ./_build/libs.js ./_build/bundle.js",
         "js:tests": "jest --verbose --noStackTrace --no-cache || echo",
-        "js": "npm-run-all --sequential js:browserify js:uglify js:babel js:tests js:libs",
+        "js": "npm-run-all --sequential js:browserify js:uglify js:babel js:libs js:tests",
         "html": "html-minifier --collapse-whitespace --output ./index.html ./_html/index.html",
         "browsersync": "cross-var browser-sync start --proxy \"$npm_package_config_domain\" --files \"./_build/*.css, ./_build/*.js\"",
         "copy": "cpx \"./_assets/**/*.{html,png,jpg}\" ./_build/",
