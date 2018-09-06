@@ -15,7 +15,7 @@
         "js:tests": "jest --verbose --noStackTrace --no-cache || echo",
         "js": "npm-run-all --sequential js:browserify js:uglify js:babel js:libs js:tests",
         "html": "html-minifier --collapse-whitespace --output ./index.html ./_html/index.html",
-        "browsersync": "cross-var browser-sync start --proxy \"$npm_package_config_domain\" --files \"./_build/*.css, ./_build/*.js\"",
+        "browsersync": "cross-var browser-sync start --reload-debounce 3000 --proxy \"$npm_package_config_domain\" --files \"./_build/*.css, ./_build/*.js\"",
         "copy": "cpx \"./_assets/**/*.{html,png,jpg}\" ./_build/",
         "watch:copy": "onchange ./_assets/**/*.* --initial --wait --delay 1000 --await-write-finish -- \"npm run copy\"",
         "watch:css": "onchange ./_scss/**/*.scss ./_libs/**/*.css --initial --wait --delay 1000 --await-write-finish -- \"npm run css\"",
