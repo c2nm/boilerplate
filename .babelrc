@@ -1,4 +1,14 @@
 {
-    "presets": ["es2015", "es2017"],
-    "plugins": ["transform-runtime", "transform-class-properties", "transform-object-rest-spread"]
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "shippedProposals": true
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-class-properties"
+    ]
 }
