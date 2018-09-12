@@ -1,20 +1,14 @@
-.test
-{
-
+.test {
     /* interpolate */
-    width: calc(66.66% - 2 * #{$padding});
+    width: calc(66.66% - 2 * #{$space});
 
-    .title
-    {
+    .title {
         /* always use this approach to handle common styles (include the common style in every place needed) */
         @include title;
     }
 }
 
-@media screen and (max-width: $breakpoint-big)
-{
-    .test
-    {
-
+@media screen and (max-width: $breakpoint-big) {
+    .test {
     }
 }

@@ -1,0 +1,127 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: $color-white;
+}
+
+html {
+    height: 100%;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
+    text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* iphone/ipad prevent overflow-x */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 768px) {
+    html {
+        overflow-x: hidden;
+    }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    color: $color-grey;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+textarea {
+    overflow: auto;
+}
+
+input,
+textarea {
+    border-radius: 0;
+    border: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 100px $color-white inset !important;
+    -webkit-text-fill-color: $color-grey !important;
+}
+
+input[type='submit'],
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+textarea,
+select {
+    appearance: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+select {
+    background-color: $color-white;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+
+::selection {
+    background: $color-greenlight;
+    color: $color-white;
+}
+
+::-moz-selection {
+    background: $color-greenlight;
+    color: $color-white;
+}
+
+::-webkit-selection {
+    background: $color-greenlight;
+    color: $color-white;
+}
+
+:invalid {
+    box-shadow: none;
+}
+
+:-moz-submit-invalid {
+    box-shadow: none;
+}
+
+:-moz-ui-invalid {
+    box-shadow: none;
+}

@@ -1,12 +1,8 @@
-$font-size-small: 16rem;
-$font-size-medium: 26rem;
-$font-size-big: 40rem;
-$font-size-biggest: 60rem;
-$padding: 30px;
-$breakpoint-big: 1100px;
-$breakpoint-small: 700px;
+$font-size-small: 10rem;
+$font-size-base: 16rem;
+$font-size-big: 26rem;
+$font-size-biggest: 40rem;
 
-$header-height: 5vw;
 $color-black: #000000;
 $color-white: #ffffff;
 $color-grey: #5d5b5b;
@@ -16,4 +12,10 @@ $color-greenlight-opaque: rgba(108, 203, 184, 0.95);
 $color-greendark-opaque: rgba(27, 117, 147, 0.95);
 $color-orangelight: #fecc1c;
 $color-orangedark: #fecc1c;
-$base-font-size: 20rem;
+
+$space: 40rem;
+$border-radius: 5rem;
+$metabar-height: 40rem;
+
+$breakpoint-big: 1100px;
+$breakpoint-small: 700px;

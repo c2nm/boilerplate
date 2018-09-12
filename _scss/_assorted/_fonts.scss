@@ -1,63 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500|Quicksand:300,400,500');
 
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-thin.woff2') format('woff2'), url('font-thin.woff') format('woff');
     font-style: normal;
     font-weight: 100;
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-thin.woff2') format('woff2'), url('font-thin.woff') format('woff');
     font-style: normal;
     font-weight: 200;
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-thin.woff2') format('woff2'), url('font-thin.woff') format('woff');
     font-style: normal;
     font-weight: 300;
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-regular.woff2') format('woff2'), url('font-regular.woff') format('woff');
     font-style: normal;
     font-weight: 400; /* same as "normal" */
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-regular.woff2') format('woff2'), url('font-regular.woff') format('woff');
     font-style: normal;
     font-weight: 500;
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-bold.woff2') format('woff2'), url('font-bold.woff') format('woff');
     font-style: normal;
     font-weight: 600;
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-bold.woff2') format('woff2'), url('font-bold.woff') format('woff');
     font-style: normal;
     font-weight: 700; /* same as bold */
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-bold.woff2') format('woff2'), url('font-bold.woff') format('woff');
     font-style: normal;
     font-weight: 800;
 }
-@font-face
-{
+@font-face {
     font-family: 'common-font-family-name';
     src: url('font-bold.woff2') format('woff2'), url('font-bold.woff') format('woff');
     font-style: normal;
@@ -69,17 +60,15 @@ body,
 button,
 input,
 select,
-textarea
-{
-	font-family: 'Roboto', sans-serif;
+textarea {
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-@mixin font-heading
-{
-	font-family: 'Quicksand', sans-serif;
+@mixin font-heading {
+    font-family: 'Quicksand', sans-serif;
     font-weight: normal;
     font-style: normal;
     font-display: swap;
