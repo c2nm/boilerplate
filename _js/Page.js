@@ -13,6 +13,7 @@ export default class Page {
         await this.loadScripts();
         this.addEnvironment();
         this.initGoogleAnalytics();
+        console.log( document.querySelector('#app').closest('body') );
     }
 
     loadScripts() {
