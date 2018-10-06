@@ -14,6 +14,10 @@ export default class Page {
         this.addEnvironment();
         this.initGoogleAnalytics();
         console.log( document.querySelector('#app').closest('body') );
+        let foo = {};
+        console.log( foo?.bar?.baz );
+        foo = { bar: { baz: 'gnarr' } };
+        console.log( foo?.bar?.baz );
     }
 
     loadScripts() {
