@@ -19,7 +19,7 @@
         "copy": "cpx \"./_assets/**/*.{html,png,jpg}\" ./_build/",
         "watch:copy": "onchange ./_assets/**/*.* --initial --wait --delay 1000 --await-write-finish -- onerror \"npm run copy --silent\" --title \"watch:copy\" --message \"build failed\" --sound mute",
         "watch:css": "onchange ./_scss/**/*.scss ./_libs/**/*.css --initial --wait --delay 1000 --await-write-finish -- onerror \"npm run css --silent\" --title \"watch:css\" --message \"build failed\" --sound mute",
-        "watch:js": "onchange ./_js/**/*.js ./_libs/**/*.js --initial --wait --delay 1000 --await-write-finish -- onerror \"npm run js --silent\" --title \"watch:js\" --message \"build failed\" --sound mute",
+        "watch:js": "onchange ./_js/**/*.js ./_vue/**/*.vue ./_libs/**/*.js --initial --wait --delay 1000 --await-write-finish -- onerror \"npm run js --silent\" --title \"watch:js\" --message \"build failed\" --sound mute",
         "watch:js-tests": "onchange ./_tests/_js/**/*.js --wait --delay 1000 --await-write-finish -- onerror \"npm run js:tests --silent\" --title \"watch:js-tests\" --message \"build failed\" --sound mute",
         "watch:html": "onchange ./_html/**/*.html --initial --wait --delay 1000 --await-write-finish -- onerror \"npm run html --silent\" --title \"watch:html\" --message \"build failed\" --sound mute",
         "prettier": "onchange ./_scss/**/*.scss ./_js/**/*.js ./_tests/_js/**/*.js ./_html/**/*.html ./_php/**/*.php -- prettier --write {{changed}}",
