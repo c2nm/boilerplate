@@ -45,7 +45,8 @@ npm install
 ### npm scripts (recommened)
 
 ```
-npm run build
+npm run dev # run watchers, browsersync and use uncompressed versions
+npm run build # build once for production
 ```
 
 ### gulp (legacy)
