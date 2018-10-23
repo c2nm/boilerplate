@@ -48,7 +48,7 @@ div
         display: inline-block;
         vertical-align: middle;
         width: 100%;
-        font-size: $font-size;
+        font-size: $font-size-medium;
         white-space: normal;
     }
 }
@@ -56,15 +56,14 @@ div
 /* you also can include subclasses */
 @mixin content {
     h2 {
-        font-size: 20rem;
-        line-height: 20rem;
-        margin-bottom: 15rem;
+        font-size: $font-size-big;
+        margin-bottom: $space-medium;
     }
     strong {
         font-weight: bold;
     }
     p {
-        margin-bottom: 20rem;
+        margin-bottom: $space-medium;
     }
     *:last-child {
         margin-bottom: 0;
@@ -74,6 +73,12 @@ div
 /* and nested content */
 @mixin responsive-big {
     @media screen and (max-width: $breakpoint-big) {
+        @content;
+    }
+}
+
+@mixin responsive-medium {
+    @media screen and (max-width: $breakpoint-medium) {
         @content;
     }
 }

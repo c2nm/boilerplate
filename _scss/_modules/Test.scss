@@ -1,6 +1,6 @@
 .test {
     /* interpolate */
-    width: calc(66.66% - 2 * #{$space});
+    width: calc(66.66% - 2 * #{$space-medium});
 
     .title {
         /* always use this approach to handle common styles (include the common style in every place needed) */

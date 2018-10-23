@@ -1,7 +1,6 @@
 $font-size-small: 10rem;
-$font-size-base: 16rem;
+$font-size-medium: 16rem;
 $font-size-big: 26rem;
-$font-size-biggest: 40rem;
 
 $color-black: #000000;
 $color-white: #ffffff;
@@ -13,9 +12,14 @@ $color-greendark-opaque: rgba(27, 117, 147, 0.95);
 $color-orangelight: #fecc1c;
 $color-orangedark: #fecc1c;
 
-$space: 40rem;
-$border-radius: 5rem;
-$metabar-height: 40rem;
+$space-small: 5rem;
+$space-medium: 15rem;
+$space-big: 40rem;
 
+$border-radius: 5rem;
+
+$bar-height: 40rem;
+
+$breakpoint-small: 500px;
+$breakpoint-medium: 700px;
 $breakpoint-big: 1100px;
-$breakpoint-small: 700px;
