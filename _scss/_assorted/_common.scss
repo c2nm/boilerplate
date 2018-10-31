@@ -1,11 +1,3 @@
-/* usage: 
-div
-{
-  ...
-  @include clearfix;
-}
-*/
-
 @mixin clearfix {
     &:after {
         clear: both;
@@ -70,7 +62,6 @@ div
     }
 }
 
-/* and nested content */
 @mixin responsive-big {
     @media screen and (max-width: $breakpoint-big) {
         @content;
@@ -87,4 +78,11 @@ div
     @media screen and (max-width: $breakpoint-small) {
         @content;
     }
+}
+
+/* you can achieve "dynamic variables" that change on viewports */
+@mixin padding {
+    padding:$space-big;
+    @include responsive-medium { padding: $space-medium; }
+    @include responsive-small { padding: $space-small; }
 }
