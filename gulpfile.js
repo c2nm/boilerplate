@@ -61,13 +61,13 @@ gulp.task('css', function()
         .pipe(sourcemaps.write())
         .pipe(rename('bundle.css'))
         .pipe(devMode ? through() : cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('./_build'))
+        .pipe(gulp.dest('./_public'))
         .pipe(browserSync.stream());
 });
 
 // css (critical)
 gulp.task('css-critical', function () {
-    return gulp.src('./_build/bundle.css')
+    return gulp.src('./_public/bundle.css')
         .pipe(criticalCss({
             out: 'bundle-critical.css',
             url: 'http://www.tld.com',
@@ -78,7 +78,7 @@ gulp.task('css-critical', function () {
             userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('./_build/'));
+        .pipe(gulp.dest('./_public/'));
 });
 
 // js (browser)
@@ -95,7 +95,7 @@ gulp.task('js', function()
         .pipe(source('bundle.js'))
         .pipe(buffer())
         .pipe(devMode ? through() : uglify()).on('error', function(e){ console.log(e); })
-        .pipe(gulp.dest('./_build'))
+        .pipe(gulp.dest('./_public'))
         .pipe(browserSync.reload({stream: true}));
 });
 
@@ -149,16 +149,16 @@ gulp.task('js-babel', function()
 gulp.task('js-libs', function()
 {
   return gulp
-        .src(libs.js.concat(['_build/bundle.js']))
+        .src(libs.js.concat(['_public/bundle.js']))
         .pipe(concat('bundle.js'))
-        .pipe(gulp.dest('./_build/'));
+        .pipe(gulp.dest('./_public/'));
 });
 gulp.task('css-libs', function()
 {
   return gulp
-        .src(libs.css.concat(['_build/bundle.css']))
+        .src(libs.css.concat(['_public/bundle.css']))
         .pipe(concat('bundle.css'))
-        .pipe(gulp.dest('./_build/'));
+        .pipe(gulp.dest('./_public/'));
 });
 
 // copy (if needed)
