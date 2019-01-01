@@ -23,7 +23,7 @@ export default class Page {
     loadScripts() {
         let tplurl = hlp.url(); // if wordpress, this is set in header
         // some libs need to be loaded dynamically and not concatenated via gulp
-        return hlp.loadJs([tplurl + '/_libs/library2/script.min.js']);
+        //return hlp.loadJs([tplurl + '/bundle.js']);
     }
 
     addEnvironment() {

@@ -1,6 +1,6 @@
 import hlp from 'hlp';
 import Page from './Page';
-import '@babel/polyfill'; // use Array.includes etc. in IE11
+import '@babel/polyfill/noConflict'; // use Array.includes etc. in IE11
 import 'whatwg-fetch'; // use fetch
 import 'element-closest'; // closest polyfill
 
