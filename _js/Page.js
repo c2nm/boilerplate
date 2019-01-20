@@ -33,7 +33,9 @@ export default class Page {
     }
 
     initGoogleAnalytics() {
-        if (navigator.userAgent.indexOf('Speed Insights') > -1) {
+        // try to detect page speed insights and prevent analytics from being loaded
+        if(navigator.userAgent.indexOf('Speed Insights') > -1 || (navigator.language === 'en-US' && navigator.platform.indexOf('Linux') > -1))
+        {
             return;
         }
 
