@@ -6,7 +6,7 @@ it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternative
 ## includes
 
 * [Babel (7)](https://babeljs.io)
-* [Sass](http://sass-lang.com) (+sourcemaps/autoprefixing)
+* [Sass](http://sass-lang.com) (+sourcemaps/autoprefixing/file inlining)
 * [Browsersync](https://www.browsersync.io)
 * [Vue.js](https://vuejs.org)
 * [eslint](https://eslint.org)
