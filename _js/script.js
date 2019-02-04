@@ -4,6 +4,17 @@ import '@babel/polyfill/noConflict'; // use Array.includes etc. in IE11
 import 'whatwg-fetch'; // use fetch
 import 'element-closest'; // closest polyfill
 
+/* if you embed your scripts with async, it is not guaranteed, that window load or document ready tirggers */
+/* use this instead */
+const ready = new Promise((resolve) =>
+{
+    if (document.readyState !== 'loading') { return resolve(); }
+    else { document.addEventListener('DOMContentLoaded', () => { return resolve(); }); }
+});
+ready.then(() => {
+    /* ... */
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const page = new Page();
     page.init();
@@ -12,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', e => {}, false);
-/* alert: when using the technique with loadCSS, use this instead */
+/* when using the technique with loadCSS, use this instead */
 hlp.waitUntil('.footer', 'position', 'relative').then(() => {});
 
 /* Vue.js */
