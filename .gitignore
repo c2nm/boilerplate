@@ -1,6 +1,7 @@
 /_public/
 /_build/
 /node_modules/
+/vendor/
 /_vue/_build/
 /_js/_build/
 /_tests/_build/
