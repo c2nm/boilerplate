@@ -3,6 +3,10 @@ import Page from './Page';
 import '@babel/polyfill/noConflict'; // use Array.includes etc. in IE11
 import 'whatwg-fetch'; // use fetch
 import 'element-closest'; // closest polyfill
+// choose the polyfills you need
+import 'mdn-polyfills/NodeList.prototype.forEach';
+import 'mdn-polyfills/Node.prototype.remove';
+/* ... */
 
 /* if you embed your scripts with async, it is not guaranteed, that window load or document ready tirggers */
 /* use this instead */
