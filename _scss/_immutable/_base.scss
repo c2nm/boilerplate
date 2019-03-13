@@ -135,3 +135,12 @@ img {
 :-moz-ui-invalid {
     box-shadow: none;
 }
+
+/* hide special safari / edge icons in input fields */
+input::-webkit-textfield-decoration-container,
+input::-webkit-caps-lock-indicator,
+input::-webkit-credentials-auto-fill-button,
+input::-ms-clear,
+input::-ms-reveal {
+    display: none;
+}
