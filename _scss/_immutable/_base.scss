@@ -137,10 +137,14 @@ img {
 }
 
 /* hide special safari / edge icons in input fields */
-input::-webkit-textfield-decoration-container,
 input::-webkit-caps-lock-indicator,
 input::-webkit-credentials-auto-fill-button,
 input::-ms-clear,
 input::-ms-reveal {
-    display: none;
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    width: 0;
 }
