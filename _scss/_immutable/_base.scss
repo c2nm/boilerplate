@@ -136,11 +136,10 @@ img {
     box-shadow: none;
 }
 
-/* hide special safari / edge icons in input fields */
-input::-webkit-caps-lock-indicator,
-input::-webkit-credentials-auto-fill-button,
-input::-ms-clear,
-input::-ms-reveal {
+/* hide special safari icons in input fields */
+::-webkit-contacts-auto-fill-button,
+::-webkit-credentials-auto-fill-button,
+::-webkit-caps-lock-indicator {
     visibility: hidden;
     display: none !important;
     pointer-events: none;
