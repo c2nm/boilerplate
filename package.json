@@ -112,5 +112,9 @@
     "description": "",
     "main": "_public/bundle.js",
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "browserslist": [
+        "> 0.25%",
+        "not dead"
+    ]
 }
