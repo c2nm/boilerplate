@@ -1,4 +1,4 @@
-/_public/
+/_public/*
 !/_public/.gitkeep
 /_build/
 /node_modules/
