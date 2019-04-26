@@ -22,7 +22,7 @@ module.exports =
             'error',
             'always'
         ],
-        'linebreak-style': 'no',
+        'linebreak-style': 0,
         'no-console': 'off',
         'no-unused-vars': 'off'
     }
