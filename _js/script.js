@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.app = page;
 });
 
-window.addEventListener('load', e => {}, false);
+window.addEventListener('load', e => {});
 /* when using the technique with loadCSS, use this instead */
 hlp.waitUntil('.footer', 'position', 'relative').then(() => {});
 
