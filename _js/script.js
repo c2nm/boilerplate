@@ -19,14 +19,18 @@ ready.then(() => {
     /* ... */
 });
 
+/* standard way */
+const page = new Page();
 document.addEventListener('DOMContentLoaded', () => {
-    const page = new Page();
     page.init();
     /* make publically available to run from outside for debugging purposes */
     window.app = page;
 });
 
-window.addEventListener('load', e => {});
+window.addEventListener('load', e => {
+    page.initOnLoad();
+});
+
 /* when using the technique with loadCSS, use this instead */
 hlp.waitUntil('.footer', 'position', 'relative').then(() => {});
 
