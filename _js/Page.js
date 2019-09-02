@@ -20,6 +20,10 @@ export default class Page {
         console.log( foo?.bar?.baz );
     }
 
+    async initOnLoad() {
+        
+    }
+
     loadScripts() {
         let tplurl = hlp.url(); // if wordpress, this is set in header
         // some libs need to be loaded dynamically and not concatenated via gulp
