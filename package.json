@@ -21,6 +21,7 @@
         "html": "html-minifier --collapse-whitespace --output ./_public/index.html ./_html/index.html",
         "html:dev": "html-minifier --output ./_public/index.html ./_html/index.html",
         "browsersync": "from-env browser-sync start --reload-debounce 3000 --proxy %DOMAIN --files \"./_public/*.css, ./_public/*.js\"",
+        "browsersync:native": "browser-sync start --reload-debounce 3000 --proxy $(grep DOMAIN .env | cut -d '=' -f2) --files \"./_public/*.css, ./_public/*.js\"",
         "copy": "ncp ./_assets ./_public/",
         "delete": "del-cli ./_public/index.html",
         "replace": "replace-in-file \"/Copyright/g\" \"Hurray\" ./_public/index.html --isRegex",
