@@ -1,42 +1,71 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1" />
-    <title>boilerplate</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="stylesheet" href="/bundle.css">
-</head>
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1"
+        />
+        <title>boilerplate</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="stylesheet" href="/bundle.css" />
+    </head>
+    <body>
+        <header>
+            <h1 class="mixin-test">title</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">LINK</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h2>title</h2>
+                <section>
+                    group that makes sense to group together
+                </section>
+            </article>
+            <article>
+                Second article
+            </article>
+        </main>
+        <footer>
+            Copyright 20xx
+        </footer>
 
-	<header>
-		<h1 class="mixin-test">title</h1>
-		<nav>
-			<ul>
-				<li><a href="#">LINK</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<article>
-			<h2>title</h2>
-			<section>
-				group that makes sense to group together
-			</section>
-		</article>
-		<article>
-			Second article
-		</article>
-	</main>
-	<footer>
-		Copyright 20xx
-	</footer>
+        <!-- vue.js -->
+        <div id="app"></div>
 
-    <div id="app"></div>
+        <!-- tailwind.css -->
+        <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="https://picsum.photos/200/300" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                <p class="text-gray-700 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia,
+                    nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                </p>
+            </div>
+            <div class="px-6 py-4">
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+                    >#photography</span
+                >
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+                    >#travel</span
+                >
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
+                    >#winter</span
+                >
+            </div>
+        </div>
 
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <script src="/bundle.js"></script> 
-</body>
+        <script src="/bundle.js"></script>
+    </body>
 </html>
