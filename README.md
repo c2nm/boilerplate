@@ -9,7 +9,7 @@ it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternative
 -   [Sass](http://sass-lang.com) (+sourcemaps/autoprefixing/file inlining)
 -   [Browsersync](https://www.browsersync.io)
 -   [Vue.js](https://vuejs.org)
--   [Tailwind CSS](https://tailwindcss.com/)
+-   [Tailwind CSS](https://tailwindcss.com/) (with [data attributes](https://github.com/vielhuber/postcss-tailwind-data-attr))
 -   [eslint](https://eslint.org)
 -   [Jest](https://github.com/facebook/jest) (unit/integration/regression tests with [Puppeteer](https://github.com/smooth-code/jest-puppeteer))
 -   [hlp](https://github.com/vielhuber/hlp)
@@ -35,9 +35,8 @@ cd testproject
 wget https://github.com/vielhuber/boilerplate/archive/master.zip
 unzip master.zip -d .
 mv boilerplate-master/{.[!.],}* .
-rm -r boilerplate-master
-rm master.zip
-rm README.md
+rm -r boilerplate-master master.zip README.md
+cp .env.example .env
 npm install
 ```
 
