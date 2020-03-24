@@ -1,12 +1,11 @@
 import hlp from 'hlp';
 
 export default class Page {
-    _ = this;
-
     var3 = 'this also works!';
     static var4 = 'this also!';
 
     constructor() {
+        let _ = this;
         _.var1 = 'variable1';
         this.var2 = 'variable2';
     }
