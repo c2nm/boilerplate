@@ -4,6 +4,7 @@ describe('Test puppeteer', () => {
     }, 3000);
 
     it('should display "google" text on page', async () => {
+        await page.waitForSelector('#hplogo');
         await expect(page).toMatch('google');
     }, 3000);
 });
