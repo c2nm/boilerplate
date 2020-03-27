@@ -1,4 +1,6 @@
 import hlp from 'hlp';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 
 export default class Page {
     var3 = 'this also works!';

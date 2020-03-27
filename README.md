@@ -24,6 +24,7 @@ it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternative
 -   bundling of external libs
 -   extracting of critical css for [above-the-fold-content](https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent)
 -   deferred loading of google analytics
+-   import css files in javascript
 -   google page speed 100/100 ready
 -   full ie11 support
 
