@@ -33,7 +33,7 @@
         "watch:js-tests": "onchange ./_tests/_js/*.js ./_tests/_js/**/*.js --wait --delay 100 --await-write-finish 200 -- onerror \"npm run js:tests\" --title \"watch:js-tests\" --message \"build failed\" --sound mute",
         "watch:html": "onchange ./_html/*.html ./_html/**/*.html --initial --wait --delay 100 --await-write-finish 200 -- onerror \"npm run html:dev\" --title \"watch:html\" --message \"build failed\" --sound mute",
         "prettier": "onchange ./_scss/*.scss ./_scss/**/*.scss ./_libs/*.css ./_libs/**/*.css ./_js/*.js ./_js/**/*.js ./_tests/_js/*.js ./_tests/_js/**/*.js ./_html/*.html ./_html/**/*.html ./_php/*.php ./_php/**/*.php -- prettier --write {{changed}}",
-        "build": "npm-run-all --parallel copy css js html",
+        "prod": "npm-run-all --parallel copy css js html",
         "dev": "npm-run-all --parallel watch:* browsersync"
     },
     "devDependencies": {

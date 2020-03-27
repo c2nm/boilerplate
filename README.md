@@ -42,11 +42,11 @@ npm install
 
 ## usage
 
-### npm scripts (recommened)
+### npm scripts (recommended)
 
 ```
 npm run dev # run watchers, browsersync and use uncompressed versions
-npm run build # build once for production
+npm run prod # build once for production
 ```
 
 ### gulp (legacy)
