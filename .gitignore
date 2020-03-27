@@ -11,3 +11,5 @@
 /package-lock.json
 __image_snapshots__
 /.env
+*.css.map
+*.js.map
