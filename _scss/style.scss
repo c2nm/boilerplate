@@ -8,5 +8,8 @@
 @import '_assorted/_scrollbars';
 @import '_modules/Test';
 
+// if you want to use external js libraries (e.g. imported via node_modules that depend on css)
+//@import './../node_modules/highlight.js/styles/tomorrow-night-bright.css';
+
 // if you use tailwind, disable all the above
 @import '_tailwind/_tailwind';
