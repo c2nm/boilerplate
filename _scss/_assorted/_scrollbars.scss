@@ -19,5 +19,11 @@ body::-webkit-scrollbar-thumb
   background-color: #0011f5;
   border-radius: 10px;
 }
+body::-webkit-scrollbar-thumb:hover {
+    border: 2px solid red;
+}
+body::-webkit-scrollbar-thumb:active {
+    border: 2px dashed blue;
+}
 
 
