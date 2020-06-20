@@ -14,14 +14,8 @@ module.exports =
     },
     'rules':
     {
-        'quotes': [
-            'error',
-            'single'
-        ],
-        'semi': [
-            'error',
-            'always'
-        ],
+        'quotes': ['error', 'single', { allowTemplateLiterals: true }],
+        'semi': ['error', 'always'],
         'linebreak-style': 0,
         'no-console': 'off',
         'no-unused-vars': 'off'
