@@ -127,6 +127,7 @@
     "author": "",
     "license": "ISC",
     "browserslist": [
+        "ie >= 11",
         "> 0.25%",
         "not dead"
     ]

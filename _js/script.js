@@ -1,6 +1,6 @@
 import hlp from 'hlp';
 import Page from './Page';
-import '@babel/polyfill/noConflict'; // use Array.includes etc. in IE11 (don't use this with recaptcha, see: https://stackoverflow.com/questions/47669463/google-recaptcha-error-in-ie-11)
+import '@babel/polyfill/noConflict'; // use Promises, Array.includes etc. in IE11 (don't use this with recaptcha, see: https://stackoverflow.com/questions/47669463/google-recaptcha-error-in-ie-11)
 import 'whatwg-fetch'; // use fetch
 import 'element-closest'; // closest polyfill
 // choose the polyfills you need
