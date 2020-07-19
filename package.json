@@ -9,7 +9,7 @@
         "css:postcss:autoprefixer": "postcss --use autoprefixer --output ./_public/bundle.css ./_public/bundle.css",
         "css:postcss:tailwind": "postcss --use tailwindcss postcss-tailwind-data-attr cssnano --output ./_public/bundle.css ./_public/bundle.css",
         "css:postcss:config": "postcss --output ./_public/bundle.css ./_public/bundle.css",
-        "css:critical": "from-env cross-var critical %DOMAIN --width $npm_package_config_critical_width --height $npm_package_config_critical_height  --ignore \"@font-face\" --ignore \".foo\" --userAgent \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\" --timeout 30000 > ./_public/bundle-critical.css",
+        "css:critical": "from-env cross-var critical %DOMAIN --width $npm_package_config_critical_width --height $npm_package_config_critical_height --ignore \"@font-face\" --ignore \".foo\" --userAgent \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\" > ./_public/bundle-critical.css",
         "css:libs": "find ./_libs -name \"*.css\" | xargs cat > ./_public/libs.css && cat ./_public/bundle.css >> ./_public/libs.css && mv ./_public/libs.css ./_public/bundle.css",
         "css": "npm-run-all --sequential css:sass css:postcss:tailwind css:postcss:autoprefixer css:critical css:libs",
         "css:dev": "npm-run-all --sequential css:sass:dev css:postcss:tailwind css:libs",
