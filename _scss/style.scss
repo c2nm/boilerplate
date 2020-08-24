@@ -10,3 +10,6 @@
 
 // if you use tailwind, disable all the above
 @import '_tailwind/_tailwind';
+
+// directly embed node modules css dependency
+//@import '../node_modules/flatpickr/dist/flatpickr.css';
