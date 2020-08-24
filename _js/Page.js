@@ -1,5 +1,7 @@
 import hlp from 'hlp';
 import hljs from 'highlight.js';
+
+// this is how to import css from node module dependencies!
 import 'highlight.js/styles/github.css';
 
 export default class Page {
