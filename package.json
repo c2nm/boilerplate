@@ -7,7 +7,7 @@
         "css:sass": "node-sass --output-style compressed ./_scss/style.scss ./_public/bundle.css",
         "css:sass:dev": "node-sass --source-map true ./_scss/style.scss ./_public/bundle.css",
         "css:postcss:autoprefixer": "postcss --use autoprefixer --output ./_public/bundle.css ./_public/bundle.css",
-        "css:postcss:tailwind": "postcss --use tailwindcss postcss-tailwind-data-attr cssnano --output ./_public/bundle.css ./_public/bundle.css",
+        "css:postcss:tailwind": "postcss --use tailwindcss cssnano --output ./_public/bundle.css ./_public/bundle.css",
         "css:postcss:config": "postcss --output ./_public/bundle.css ./_public/bundle.css",
         "css:critical": "from-env cross-var critical %DOMAIN --width $npm_package_config_critical_width --height $npm_package_config_critical_height --ignore-atrule \"@font-face\" --ignore-rule \".foo\" --userAgent \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\" > ./_public/bundle-critical.css",
         "css:libs": "find ./_libs -name \"*.css\" | xargs cat > ./_public/libs.css && cat ./_public/bundle.css >> ./_public/libs.css && mv ./_public/libs.css ./_public/bundle.css",
@@ -34,8 +34,8 @@
         "delete": "del-cli ./_public/index.html",
         "replace": "replace-in-file \"/Copyright/g\" \"Hurray\" ./_public/index.html --isRegex",
         "prettier": "onchange ./_scss/*.scss ./_scss/**/*.scss ./_libs/*.css ./_libs/**/*.css ./_js/*.js ./_js/**/*.js ./_tests/_js/*.js ./_tests/_js/**/*.js ./_html/*.html ./_html/**/*.html ./_php/*.php ./_php/**/*.php -- prettier --write {{changed}}",
-        "prod": "npm-run-all --parallel copy css js html",
-        "dev": "npm-run-all --parallel copy:watch css:watch js:watch js:tests:watch html:watch browsersync"
+        "prod": "cross-env NODE_ENV=production npm-run-all --parallel copy css js html",
+        "dev": "cross-env NODE_ENV=development npm-run-all --parallel copy:watch css:watch js:watch js:tests:watch html:watch browsersync"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.10",
@@ -61,6 +61,7 @@
         "concat": "^1.0.3",
         "cpx": "^1.5.0",
         "critical": "^2.0.6",
+        "cross-env": "^7.0.3",
         "cross-spawn": "^7.0.3",
         "cross-var": "^1.1.0",
         "cssnano": "^4.1.10",
@@ -127,9 +128,5 @@
     "main": "_public/bundle.js",
     "author": "",
     "license": "ISC",
-    "browserslist": [
-        "ie >= 11",
-        "> 0.25%",
-        "not dead"
-    ]
+    "dependencies": {}
 }
