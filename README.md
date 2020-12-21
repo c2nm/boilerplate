@@ -9,7 +9,7 @@ it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternative
 -   [Sass](http://sass-lang.com) (+sourcemaps/autoprefixing/file inlining)
 -   [Browsersync](https://www.browsersync.io)
 -   [Vue.js](https://vuejs.org)
--   [Tailwind CSS](https://tailwindcss.com/) (with [data attributes](https://github.com/vielhuber/postcss-tailwind-data-attr))
+-   [Tailwind CSS](https://tailwindcss.com/)
 -   [eslint](https://eslint.org)
 -   [Jest](https://github.com/facebook/jest) (unit/integration/regression tests with [Puppeteer](https://github.com/smooth-code/jest-puppeteer))
 -   [hlp](https://github.com/vielhuber/hlp)
