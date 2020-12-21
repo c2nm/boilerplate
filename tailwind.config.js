@@ -1,6 +1,10 @@
 module.exports = {
     prefix: 'tw-',
-    theme: {},
+    purge: [],
+    darkMode: false,
+    theme: {
+        extend: {}
+    },
     variants: {},
     plugins: []
-}
+};

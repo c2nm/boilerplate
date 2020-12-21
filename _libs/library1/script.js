@@ -1,5 +1,4 @@
-function foo()
-{
-    alert('FOO');
+function foo() {
+    console.log('FOO');
 }
 foo();

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import hlp from 'hlp';
 
 describe('Test group 1', () => {
