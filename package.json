@@ -7,7 +7,7 @@
         "css:sass": "node-sass --output-style compressed ./_scss/style.scss ./_public/bundle.css",
         "css:sass:dev": "node-sass --source-map true ./_scss/style.scss ./_public/bundle.css",
         "css:postcss:autoprefixer": "postcss --use autoprefixer --output ./_public/bundle.css ./_public/bundle.css",
-        "css:postcss:tailwind": "postcss --use tailwindcss postcss-tailwind-data-attr --output ./_public/bundle.css ./_public/bundle.css",
+        "css:postcss:tailwind": "postcss --use tailwindcss postcss-tailwind-data-attr cssnano --output ./_public/bundle.css ./_public/bundle.css",
         "css:postcss:config": "postcss --output ./_public/bundle.css ./_public/bundle.css",
         "css:critical": "from-env cross-var critical %DOMAIN --width $npm_package_config_critical_width --height $npm_package_config_critical_height --ignore-atrule \"@font-face\" --ignore-rule \".foo\" --userAgent \"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\" > ./_public/bundle-critical.css",
         "css:libs": "find ./_libs -name \"*.css\" | xargs cat > ./_public/libs.css && cat ./_public/bundle.css >> ./_public/libs.css && mv ./_public/libs.css ./_public/bundle.css",
