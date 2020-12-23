@@ -28,7 +28,7 @@
         "html:dev": "npm-run-all --sequential html:minify:dev",
         "html:minify": "html-minifier --collapse-whitespace --output ./_public/index.html ./_html/index.html",
         "html:minify:dev": "html-minifier --output ./_public/index.html ./_html/index.html",
-        "html:inline": "inline-source --attribute \"data-inline\" --compress false --root ./_public ./_public/index.html > ./_public/index_inline.html && move-file ./_public/index_inline.html ./_public/index.html",
+        "html:inline": "inline-source --attribute \"data-inline\" --compress true --root ./_public ./_public/index.html > ./_public/index_inline.html && move-file ./_public/index_inline.html ./_public/index.html",
         "html:watch": "onchange ./_html/*.html ./_html/**/*.html --initial --poll 50 --delay 0 --await-write-finish 50 -- onerror \"npm run html:dev\" --title \"html:watch\" --message \"build failed\" --sound mute",
         "browsersync": "from-env browser-sync start --reload-debounce 3000 --proxy %DOMAIN --files \"./_public/*.html, ./_public/*.css, ./_public/*.js\"",
         "browsersync:native": "browser-sync start --reload-debounce 3000 --proxy $(grep DOMAIN .env | cut -d '=' -f2) --files \"./_public/*.html, ./_public/*.css, ./_public/*.js\"",
