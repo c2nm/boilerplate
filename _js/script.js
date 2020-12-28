@@ -22,7 +22,7 @@ ready.then(() => {
 /* standard way */
 const page = new Page();
 document.addEventListener('DOMContentLoaded', () => {
-    page.init();
+    page.initOnReady();
     /* make publically available to run from outside for debugging purposes */
     window.app = page;
 });

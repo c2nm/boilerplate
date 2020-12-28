@@ -14,7 +14,7 @@ export default class Page {
         this.var2 = 'variable2';
     }
 
-    async init() {
+    async initOnReady() {
         await this.loadScripts();
         this.addEnvironment();
         this.initGoogleAnalytics();
