@@ -39,7 +39,7 @@
         "delete:files": "del ./_public/*.* ./_public/**/ !./_public/index.php",
         "replace": "replace-in-file \"/Copyright/g\" \"Hurray\" ./_public/index.html --isRegex",
         "prettier": "onchange ./_scss/*.scss ./_scss/**/*.scss ./_libs/*.css ./_libs/**/*.css ./_js/*.js ./_js/**/*.js ./_tests/_js/*.js ./_tests/_js/**/*.js ./_html/*.html ./_html/**/*.html ./_php/*.php ./_php/**/*.php -- prettier --write {{changed}}",
-        "prod": "cross-env NODE_ENV=production npm-run-all --sequential copy css js html",
+        "prod": "cross-env NODE_ENV=production npm-run-all --sequential copy css js html delete:files",
         "dev": "cross-env NODE_ENV=development npm-run-all --parallel copy:watch css:watch js:watch js:tests:watch html:watch browsersync"
     },
     "devDependencies": {
