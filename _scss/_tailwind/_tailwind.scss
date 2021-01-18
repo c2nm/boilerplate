@@ -1,5 +1,5 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import '../_assorted/_fonts';
 
 /* colors */
 :root {
@@ -47,7 +47,7 @@
         $rem_breakpoint_small: 320;
         $rem_font_size_big: 18;
         $rem_breakpoint_big: 1920;
-        
+
         font-size: #{$rem_font_size_small}px;
 
         @media ( min-width: #{$rem_breakpoint_small}px ) {
