@@ -6,6 +6,11 @@ module.exports = {
         fontFamily: {
             custom: ['"Open Sans"', 'sans-serif']
         },
+        colors: {
+            black: 'var(--color-black)',
+            white: 'var(--color-white)',
+            red: 'var(--color-red)'
+        },
         extend: {}
     },
     variants: {},
