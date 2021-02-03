@@ -1,19 +1,51 @@
+/* external packages */
 import hlp from 'hlp';
+
+/* internal classes */
 import Page from './Page';
-import '@babel/polyfill/noConflict'; // use Promises, Array.includes etc. in IE11 (don't use this with recaptcha, see: https://stackoverflow.com/questions/47669463/google-recaptcha-error-in-ie-11)
+
+/* polyfills */
+// we use "useBuiltIns": "usage" and have all es core features included
+// however, there are cases where we need to import manual polyfill (since they are intentionally not included)
 import 'whatwg-fetch'; // use fetch
 import 'element-closest'; // closest polyfill
-// choose the polyfills you need
-import 'mdn-polyfills/NodeList.prototype.forEach';
-import 'mdn-polyfills/Node.prototype.remove';
+import 'mdn-polyfills/Node.prototype.remove'; // dom polyfill
 /* ... */
+// promise (150kb)
+// included in corejs via builtins: usage
+new Promise(resolve => {
+    console.log('PROMISE RESOLVED');
+    resolve();
+});
+// forEach (20kb)
+// included in corejs via builtins: usage
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('div').forEach(() => {
+        console.log('1');
+    });
+});
+// fetch (50kb)
+// this is missing in corejs (see https://github.com/zloirock/core-js), so we need a manual polyfill for this
+fetch('http://httpbin.org/bytes/100').then(response => {
+    console.log(response);
+});
+// remove (20kb)
+// this is missing in corejs (see https://github.com/zloirock/core-js/issues/317#issuecomment-314691446), so we need a manual polyfill for this
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('br').remove();
+});
+/* end of polyfills */
 
 /* if you embed your scripts with async, it is not guaranteed, that window load or document ready tirggers */
 /* use this instead */
-const ready = new Promise((resolve) =>
-{
-    if (document.readyState !== 'loading') { return resolve(); }
-    else { document.addEventListener('DOMContentLoaded', () => { return resolve(); }); }
+const ready = new Promise(resolve => {
+    if (document.readyState !== 'loading') {
+        return resolve();
+    } else {
+        document.addEventListener('DOMContentLoaded', () => {
+            return resolve();
+        });
+    }
 });
 ready.then(() => {
     /* ... */
