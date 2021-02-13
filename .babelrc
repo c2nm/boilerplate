@@ -6,7 +6,8 @@
                 "useBuiltIns": "usage",
                 "corejs": { "version": "3.8", "proposals": true }
             }
-        ]
+        ],
+        "@babel/preset-react"
     ],
     "plugins": [
         "@babel/plugin-transform-runtime",

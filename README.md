@@ -11,6 +11,7 @@ it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternative
 -   [Vue.js](https://vuejs.org)
 -   [Tailwind CSS](https://tailwindcss.com/)
 -   [eslint](https://eslint.org)
+-   [React](https://reactjs.org)
 -   [Jest](https://github.com/facebook/jest) (unit/integration/regression tests with [Puppeteer](https://github.com/smooth-code/jest-puppeteer))
 -   [hlp](https://github.com/vielhuber/hlp)
 -   [Prettier](https://github.com/prettier/prettier) and [Prettier PHP Plugin](https://github.com/prettier/plugin-php)

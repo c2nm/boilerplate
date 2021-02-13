@@ -75,3 +75,14 @@ const vm = new Vue({
     template: '<App/>',
     components: { App }
 });
+
+/* React */
+const MyComponent = () => {
+  return (
+    <div>
+      <button type="button">Click me</button>
+      <p>Hello</p>
+    </div>
+  )
+}
+console.log(MyComponent);
