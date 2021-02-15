@@ -28,7 +28,7 @@
             background-color: var(--color-black);
         }
     }
-    .selection-color {
+    .selection-color * {
         ::selection {
             background: var(--color-black);
             color: var(--color-white);
