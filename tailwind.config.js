@@ -1,6 +1,11 @@
 module.exports = {
     prefix: '',
-    purge: ['./_html/**/*.html', './**/*.php'],
+    purge: {
+        content: ['./_html/**/*.html', './**/*.php'],
+        options: {
+            safelist: ['sticky']
+        }
+    },
     darkMode: false,
     theme: {
         fontFamily: {
