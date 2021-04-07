@@ -22,6 +22,8 @@ export default class Page {
         console.log(foo?.bar?.baz);
         foo = { bar: { baz: 'gnarr' } };
         console.log(foo?.bar?.baz);
+        // test tailwind safelist
+        document.querySelector('#app + div').classList.add('sticky');
     }
 
     async initOnLoad() {}

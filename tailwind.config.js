@@ -1,10 +1,14 @@
 module.exports = {
     prefix: '',
+    mode: 'jit',
     purge: {
-        content: ['./_html/**/*.html', './**/*.php'],
+        content: ['./_html/**/*.html', './**/*.php', './tailwind.safelist.txt']
+        /* this does not work with tailwind JIT, we use tailwind.safelist.txt instead */
+        /*
         options: {
             safelist: ['sticky']
         }
+        */
     },
     darkMode: false,
     theme: {

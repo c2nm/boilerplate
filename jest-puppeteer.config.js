@@ -1,5 +1,6 @@
 module.exports = {
     launch: {
+        headless: true,
         args: [
             '--disable-gpu',
             '--disable-dev-shm-usage',
