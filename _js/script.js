@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* end of polyfills */
 
 /* if you embed your scripts with async, it is not guaranteed, that window load or document ready tirggers */
-/* use this instead */
+/* use this instead of the original functions */
 const ready = new Promise(resolve => {
     if (document.readyState !== 'loading') {
         return resolve();
@@ -48,6 +48,18 @@ const ready = new Promise(resolve => {
     }
 });
 ready.then(() => {
+    /* ... */
+});
+const load = new Promise(resolve => {
+    if (document.readyState === 'complete') {
+        return resolve();
+    } else {
+        window.addEventListener('load', () => {
+            return resolve();
+        });
+    }
+});
+load.then(() => {
     /* ... */
 });
 
