@@ -7,7 +7,7 @@
         "🔽 css 🔽": "",
         "css": "npm-run-all --sequential css:sass css:postcss:tailwind css:postcss:autoprefixer css:critical css:libs",
         "css:dev": "npm-run-all --sequential css:sass:dev css:postcss:tailwind css:libs",
-        "css:watch": "onchange ./_scss/*.scss ./_scss/**/*.scss ./_libs/*.css ./_libs/**/*.css --initial --poll 50 --delay 0 --await-write-finish 50 -- onerror \"npm run css:dev\" --title \"css:watch\" --message \"build failed\" --sound mute",
+        "css:watch": "onchange ./_scss/*.scss ./_scss/**/*.scss ./*.php ./**/*.php ./_php/*.php ./_php/**/*.php ./_libs/*.css ./_libs/**/*.css --initial --poll 50 --delay 0 --await-write-finish 50 -- onerror \"npm run css:dev\" --title \"css:watch\" --message \"build failed\" --sound mute",
         "css:sass": "node-sass --output-style compressed ./_scss/style.scss ./_public/bundle.css",
         "css:sass:dev": "node-sass --source-map true ./_scss/style.scss ./_public/bundle.css",
         "css:postcss:autoprefixer": "postcss --use autoprefixer --no-map --output ./_public/bundle.css ./_public/bundle.css",
