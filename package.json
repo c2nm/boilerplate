@@ -1,8 +1,4 @@
 {
-    "config": {
-        "critical_width": 1920,
-        "critical_height": 1080
-    },
     "scripts": {
         "🔽 css 🔽": "",
         "css": "npm-run-all --sequential css:sass css:postcss:tailwind css:postcss:autoprefixer css:critical css:libs",
@@ -146,6 +142,11 @@
         "vueify-insert-css": "^1.0.0",
         "whatwg-fetch": "^3.6.2"
     },
+    "config": {
+        "critical_width": 1920,
+        "critical_height": 1080
+    },
+    "private": true,
     "name": "boilerplate",
     "version": "1.0.0",
     "description": "",
