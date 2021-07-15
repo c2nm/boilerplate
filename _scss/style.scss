@@ -10,5 +10,8 @@
 @import '_modules/Test';
 */
 
+// another way to import external library css (in this example katex.min.css)
+//@import './node_modules/katex/dist/katex.min';
+
 // if you use tailwind, disable all the above
 @import '_tailwind/_tailwind';
