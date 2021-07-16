@@ -3,6 +3,7 @@ import hlp from 'hlp';
 
 /* internal classes */
 import Page from './Page';
+import Module from './Module';
 
 /* polyfills */
 // we use "useBuiltIns": "usage" and have all es core features included
@@ -66,13 +67,47 @@ load.then(() => {
 /* standard way */
 const page = new Page();
 document.addEventListener('DOMContentLoaded', () => {
-    page.initOnReady();
+    page.ready();
     /* make publically available to run from outside for debugging purposes */
     window.app = page;
 });
 
 window.addEventListener('load', e => {
-    page.initOnLoad();
+    page.load();
+});
+
+/* modular way */
+// singletons
+[Page].forEach((classes__value) => {
+    let c = new classes__value();
+    if (typeof c.ready === 'function') {
+        hlp.ready().then(() => {
+            c.ready();
+        });
+    }
+    if (typeof c.load === 'function') {
+        hlp.load().then(() => {
+            c.load();
+        });
+    }
+});
+// components
+[[Module, '.module']].forEach((classes__value) => {
+    hlp.runForEl(classes__value[1], (el) => {
+        let c = new classes__value[0](el);
+        if (typeof c.ready === 'function') {
+            hlp.ready().then(() => {
+                c.ready();
+            });
+        }
+        if (typeof c.load === 'function') {
+            hlp.load().then(() => {
+                c.load();
+            });
+        }
+        // also add it to the dom element (for an implicit event bus for communication between classes)
+        el.classJs = c;
+    });
 });
 
 /* when using the technique with loadCSS, use this instead */

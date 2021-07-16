@@ -14,7 +14,7 @@ export default class Page {
         this.var2 = 'variable2';
     }
 
-    async initOnReady() {
+    async ready() {
         await this.loadScripts();
         this.addEnvironment();
         console.log(document.querySelector('#app').closest('body'));
@@ -26,7 +26,7 @@ export default class Page {
         document.querySelector('#app + div').classList.add('sticky');
     }
 
-    async initOnLoad() {}
+    async load() {}
 
     loadScripts() {
         // try to detect page speed insights and delay loading of scripts
