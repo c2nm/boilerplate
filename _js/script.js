@@ -93,8 +93,8 @@ window.addEventListener('load', e => {
 });
 // components
 [[Module, '.module']].forEach((classes__value) => {
-    hlp.runForEl(classes__value[1], (el) => {
-        let c = new classes__value[0](el);
+    hlp.runForEl(classes__value[1], ($el) => {
+        let c = new classes__value[0]($el);
         if (typeof c.ready === 'function') {
             hlp.ready().then(() => {
                 c.ready();
@@ -106,7 +106,7 @@ window.addEventListener('load', e => {
             });
         }
         // also add it to the dom element (for an implicit event bus for communication between classes)
-        el.classJs = c;
+        $el.classJs = c;
     });
 });
 
