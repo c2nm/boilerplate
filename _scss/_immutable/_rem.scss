@@ -27,6 +27,8 @@ html {
 }
 
 /* set the base font size to e.g. 16rem */
-body {
+body,
+td,
+th {
     font-size: $font-size-medium;
 }
