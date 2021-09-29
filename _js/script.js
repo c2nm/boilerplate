@@ -105,8 +105,8 @@ window.addEventListener('load', e => {
                 c.load();
             });
         }
-        // also add it to the dom element (for an implicit event bus for communication between classes)
-        $el.classJs = c;
+        // also add it to the dom element (for an implicit event bus for communication between classes); call via $0.Module
+        $el[c.constructor.name] = c;
     });
 });
 
