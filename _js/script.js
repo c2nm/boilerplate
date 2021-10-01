@@ -92,8 +92,10 @@ window.addEventListener('load', e => {
     }
 });
 // components
-[[Module, '.module']].forEach((classes__value) => {
-    hlp.runForEl(classes__value[1], ($el) => {
+[
+    [Module, 'Module', '.module'],
+].forEach((classes__value) => {
+    hlp.runForEl(classes__value[2], ($el) => {
         let c = new classes__value[0]($el);
         if (typeof c.ready === 'function') {
             hlp.ready().then(() => {
@@ -106,7 +108,19 @@ window.addEventListener('load', e => {
             });
         }
         // also add it to the dom element (for an implicit event bus for communication between classes); call via $0.Module
-        $el[c.constructor.name] = c;
+        // we cannot use c.constructor.name here, because minification would break!
+        $el[classes__value[1]] = c;
+    });
+    // allow classes to also have static functions (these are only called ONCE overall)
+    hlp.ready().then(() => {
+        if (typeof classes__value[0].readyOnce === 'function') {
+            classes__value[0].readyOnce();
+        }
+    });
+    hlp.load().then(() => {
+        if (typeof classes__value[0].loadOnce === 'function') {
+            classes__value[0].loadOnce();
+        }
     });
 });
 
