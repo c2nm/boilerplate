@@ -78,7 +78,7 @@ window.addEventListener('load', e => {
 
 /* modular way */
 // singletons
-[Page].forEach((classes__value) => {
+[Page].forEach(classes__value => {
     let c = new classes__value();
     if (typeof c.ready === 'function') {
         hlp.ready().then(() => {
@@ -92,10 +92,8 @@ window.addEventListener('load', e => {
     }
 });
 // components
-[
-    [Module, 'Module', '.module'],
-].forEach((classes__value) => {
-    hlp.runForEl(classes__value[2], ($el) => {
+[[Module, 'Module', '.module']].forEach(classes__value => {
+    hlp.runForEl(classes__value[2], $el => {
         let c = new classes__value[0]($el);
         if (typeof c.ready === 'function') {
             hlp.ready().then(() => {
@@ -125,7 +123,9 @@ window.addEventListener('load', e => {
 });
 
 /* when using the technique with loadCSS, use this instead */
-hlp.waitUntil('.footer', 'position', 'relative').then(() => {});
+hlp.waitUntil('footer', 'position', 'relative').then(() => {
+    console.log('DONE');
+});
 
 /* Vue.js */
 //import Vue from 'vue'; // import runtime only
@@ -139,11 +139,11 @@ const vm = new Vue({
 
 /* React */
 const MyComponent = () => {
-  return (
-    <div>
-      <button type="button">Click me</button>
-      <p>Hello</p>
-    </div>
-  )
-}
+    return (
+        <div>
+            <button type="button">Click me</button>
+            <p>Hello</p>
+        </div>
+    );
+};
 console.log(MyComponent);
