@@ -104,7 +104,7 @@
         "gulp-uglify": "^3.0.2",
         "gulp-vueify": "0.0.3",
         "highlight.js": "^11.2.0",
-        "hlp": "^2.9.7",
+        "hlp": "^3.0.1",
         "html-minifier": "^4.0.0",
         "inline-source-cli": "^2.0.0",
         "ismobilejs": "^1.1.1",
