@@ -29,6 +29,7 @@ html {
 /* set the base font size to e.g. 16rem */
 body,
 td,
-th {
+th,
+button {
     font-size: $font-size-medium;
 }
