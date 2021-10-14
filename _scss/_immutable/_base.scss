@@ -29,10 +29,14 @@ html {
     hyphens: auto;
 }
 
-body {
-    min-height: 100%;
+html {
+    /* overflow-y gets applied to html (even if isset on body); so the correct way of doing it is directly on html */
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+body {
+    min-height: 100%;
 }
 
 /* iphone/ipad prevent overflow-x */
