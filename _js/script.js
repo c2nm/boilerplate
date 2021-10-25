@@ -79,6 +79,7 @@ window.addEventListener('load', e => {
 /* modular way */
 // singletons
 [Page].forEach(classes__value => {
+    // for convenience we use dynamic instead of static functions
     let c = new classes__value();
     if (typeof c.ready === 'function') {
         hlp.ready().then(() => {
@@ -92,8 +93,8 @@ window.addEventListener('load', e => {
     }
 });
 // components
-[[Module, 'Module', '.module']].forEach(classes__value => {
-    hlp.runForEl(classes__value[2], $el => {
+[[Module, 'Module']].forEach(classes__value => {
+    hlp.runForEl(classes__value[0].selector, $el => {
         let c = new classes__value[0]($el);
         if (typeof c.ready === 'function') {
             hlp.ready().then(() => {
@@ -121,6 +122,25 @@ window.addEventListener('load', e => {
         }
     });
 });
+// routes
+[[RouteX, 'RouteX']].forEach((classes__value) => {
+    if (new RegExp(window.location.pathname).test(classes__value[0].route) === false) {
+        return;
+    }
+    // for convenience we use dynamic instead of static functions
+    let c = new classes__value[0]();
+    if (typeof c.ready === 'function') {
+        hlp.ready().then(() => {
+            c.ready();
+        });
+    }
+    if (typeof c.load === 'function') {
+        hlp.load().then(() => {
+            c.load();
+        });
+    }
+});
+
 
 /* when using the technique with loadCSS, use this instead */
 hlp.waitUntil('footer', 'position', 'relative').then(() => {
