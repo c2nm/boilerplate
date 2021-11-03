@@ -145,6 +145,15 @@ img {
     color: $color-white;
 }
 
+::placeholder {
+    color: $color-grey;
+    opacity: 1;
+}
+
+::-ms-input-placeholder {
+    color: $color-grey;
+}
+
 :invalid {
     box-shadow: none;
 }

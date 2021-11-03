@@ -124,7 +124,7 @@ window.addEventListener('load', e => {
 });
 // routes
 [[RouteX, 'RouteX']].forEach((classes__value) => {
-    if (new RegExp(window.location.pathname).test(classes__value[0].route) === false) {
+    if (new RegExp(classes__value[0].route).test(window.location.pathname) === false) {
         return;
     }
     // for convenience we use dynamic instead of static functions
