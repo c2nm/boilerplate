@@ -121,6 +121,19 @@ a {
     outline: none;
 }
 
+strong {
+    font-weight: bold;
+}
+
+small {
+    display: block;
+    font-size: $font-size-small;
+}
+
+pre {
+    overflow: auto;
+}
+
 figure {
     margin:0;
 }
