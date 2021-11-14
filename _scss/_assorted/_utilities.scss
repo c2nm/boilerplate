@@ -1,7 +1,3 @@
-.owl > * + * {
-    margin-top: 20rem;
-}
-
 .is-hidden {
     display: none;
 }
@@ -9,4 +5,19 @@
 .is-highlighted {
     color: red;
     font-weight: 500;
+}
+
+.owl > * + * {
+    margin-top: 20rem;
+}
+// if you want to exclude <input type="hidden" /> fields
+.owl > input[type="hidden"] + *:not(input[type="hidden"]) {
+    margin-top:0;
+}
+.owl > *:not(input[type="hidden"]) + input[type="hidden"] + *:not(input[type="hidden"]),
+.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]),
+.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]),
+.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]),
+.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]) {
+    margin-top: 20rem;
 }
