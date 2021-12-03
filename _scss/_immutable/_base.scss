@@ -67,10 +67,12 @@ textarea {
     border: 0;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+*:focus:not(:focus-visible) {
     outline: none;
+}
+*:focus-visible {
+    outline: 3px dashed $color-greenlight;
+    outline-offset: 3px;
 }
 
 ::-moz-focus-inner {
@@ -118,7 +120,6 @@ input::-webkit-calendar-picker-indicator{
 a {
     text-decoration: none;
     color: inherit;
-    outline: none;
 }
 
 strong {
