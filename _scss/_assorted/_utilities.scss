@@ -3,8 +3,23 @@
 }
 
 .is-highlighted {
-    color: red;
+    color: $color-orangelight;
     font-weight: 500;
+}
+
+.is-disabled, [disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+    background-color: $color-grey;
+}
+
+.is-fullwidth {
+    width: 100%;
+}
+
+.is-strong {
+    font-weight: bold;
 }
 
 .owl > * + * {
