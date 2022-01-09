@@ -28,6 +28,9 @@ export default class Page {
 
     async load() {}
 
+    static async readyOnce() {}
+    static async loadOnce() {}
+
     loadScripts() {
         // try to detect page speed insights and delay loading of scripts
         if (

@@ -91,6 +91,17 @@ window.addEventListener('load', e => {
             c.load();
         });
     }
+    // also run static functions if available
+    if (typeof classes__value.readyOnce === 'function') {
+        hlp.ready().then(() => {
+            classes__value.readyOnce();
+        });
+    }
+    if (typeof classes__value.loadOnce === 'function') {
+        hlp.load().then(() => {
+            classes__value.loadOnce();
+        });
+    }
 });
 // components
 [[Module, 'Module']].forEach(classes__value => {
