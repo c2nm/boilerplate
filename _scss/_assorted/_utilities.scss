@@ -18,6 +18,10 @@
     pointer-events: auto;
 }
 
+.is-readonly, [readonly] {
+    background-color: $color-grey;
+}
+
 .is-fullwidth {
     width: 100%;
 }
