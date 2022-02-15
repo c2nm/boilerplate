@@ -8,10 +8,11 @@
 /_vue/_build/
 /_js/_build/
 /_tests/_build/
-/package-lock.json
 __image_snapshots__
 /.env
 *.css.map
 *.js.map
 *.tmp-browserify*
 /composer.lock
+#uncomment this, we put this in git because of dependabot
+#/package-lock.json
