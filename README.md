@@ -1,7 +1,7 @@
 # 📦 boilerplate 📦
 
 this is a boilerplate starter kit for rapid web development.  
-it is based on [npm scripts](https://docs.npmjs.com/misc/scripts) of alternatively on [gulp](http://gulpjs.com).
+it is based on [npm scripts](https://docs.npmjs.com/misc/scripts).
 
 ## includes
 
@@ -50,10 +50,4 @@ npm install
 ```
 npm run dev # run watchers, browsersync and use uncompressed versions
 npm run prod # build once for production
-```
-
-### gulp (legacy)
-
-```
-gulp
 ```
