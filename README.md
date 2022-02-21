@@ -43,9 +43,14 @@ npm install
 
 ## usage
 
-### npm scripts (recommended)
+### run watchers, browsersync and use uncompressed versions
 
 ```
-npm run dev # run watchers, browsersync and use uncompressed versions
-npm run prod # build once for production
+npm run dev
+```
+
+### build once for production
+
+```
+npm run prod
 ```
