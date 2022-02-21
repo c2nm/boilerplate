@@ -1,14 +1,12 @@
 # 📦 boilerplate 📦
 
-this is a boilerplate starter kit for rapid web development.  
-it is based on [npm scripts](https://docs.npmjs.com/misc/scripts).
+this is a boilerplate starter kit for rapid web development. it is based on [npm scripts](https://docs.npmjs.com/misc/scripts).
 
 ## includes
 
 -   [Babel (7)](https://babeljs.io)
 -   [Sass](http://sass-lang.com) (+sourcemaps/autoprefixing/file inlining)
 -   [Browsersync](https://www.browsersync.io)
--   [Vue.js](https://vuejs.org)
 -   [Tailwind CSS](https://tailwindcss.com/)
 -   [eslint](https://eslint.org)
 -   [React](https://reactjs.org)

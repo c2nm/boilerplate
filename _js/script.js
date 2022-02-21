@@ -158,16 +158,6 @@ hlp.waitUntil('footer', 'position', 'relative').then(() => {
     console.log('DONE');
 });
 
-/* Vue.js */
-//import Vue from 'vue'; // import runtime only
-import Vue from 'vue/dist/vue.js'; // import runtime+template compiler
-import App from '../_vue/App.vue';
-const vm = new Vue({
-    el: '#app',
-    template: '<App/>',
-    components: { App }
-});
-
 /* React */
 const MyComponent = () => {
     return (
