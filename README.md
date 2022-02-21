@@ -43,13 +43,13 @@ npm install
 
 ## usage
 
-### run watchers, browsersync and use uncompressed versions
+#### run watchers, browsersync and use uncompressed versions
 
 ```
 npm run dev
 ```
 
-### build once for production
+#### build once for production
 
 ```
 npm run prod
