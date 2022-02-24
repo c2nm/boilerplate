@@ -69,7 +69,7 @@ const page = new Page();
 document.addEventListener('DOMContentLoaded', () => {
     page.ready();
     /* make publically available to run from outside for debugging purposes */
-    window.app = page;
+    window.page = page;
 });
 
 window.addEventListener('load', e => {
