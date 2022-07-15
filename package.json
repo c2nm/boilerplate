@@ -41,7 +41,7 @@
         "                                                                                                                                                                                                         ": "",
         "🔽 utils 🔽": "",
         "concat": "concat -o output.css ./1.css ./2.css ./3.css",
-        "copy": "ncp ./_assets ./_public/",
+        "copy": "ncp ./_assets ./_public/ && ncp ./_assets ./_public/",
         "copy:watch": "onchange ./_assets/*.* ./_assets/**/*.* --initial --poll 25 --delay 0 --await-write-finish 25 -- onerror \"npm run copy\" --title \"copy:watch\" --message \"build failed\" --sound mute",
         "delete:file": "del-cli ./_public/index.html",
         "delete:files": "del-cli ./_public/*.* ./_public/**/ !./_public/index.html",
