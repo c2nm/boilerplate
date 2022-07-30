@@ -2,7 +2,7 @@ module.exports = {
     prefix: '',
     mode: 'jit',
     content: [
-        './_html/**/*.html', './**/*.php', './tailwind.safelist.txt'
+        './_html/**/*.html', './**/*.php', './_js/**/*.js', './tailwind.safelist.txt'
     ],
     theme: {
         fontFamily: {
