@@ -17,13 +17,13 @@ export default class Page {
     async ready() {
         await this.loadScripts();
         this.addEnvironment();
-        console.log(document.querySelector('#app').closest('body'));
+        console.log(document.querySelector('footer').closest('body'));
         let foo = {};
         console.log(foo?.bar?.baz);
         foo = { bar: { baz: 'gnarr' } };
         console.log(foo?.bar?.baz);
         // test tailwind safelist
-        document.querySelector('#app + div').classList.add('sticky');
+        document.querySelector('footer + div').classList.add('sticky');
     }
 
     async load() {}

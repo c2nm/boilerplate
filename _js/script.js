@@ -4,6 +4,7 @@ import hlp from 'hlp';
 /* internal classes */
 import Page from './Page';
 import Module from './Module';
+import RouteX from './RouteX';
 
 /* polyfills */
 // we use "useBuiltIns": "usage" and have all es core features included
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // fetch (50kb)
 // this is missing in corejs (see https://github.com/zloirock/core-js), so we need a manual polyfill for this
-fetch('http://httpbin.org/bytes/100').then(response => {
+fetch('https://httpbin.org/bytes/100').then(response => {
     console.log(response);
 });
 // remove (20kb)
@@ -134,7 +135,7 @@ window.addEventListener('load', e => {
     });
 });
 // routes
-[[RouteX, 'RouteX']].forEach((classes__value) => {
+[[RouteX, 'RouteX']].forEach(classes__value => {
     if (new RegExp(classes__value[0].route).test(window.location.pathname) === false) {
         return;
     }
@@ -151,7 +152,6 @@ window.addEventListener('load', e => {
         });
     }
 });
-
 
 /* when using the technique with loadCSS, use this instead */
 hlp.waitUntil('footer', 'position', 'relative').then(() => {
