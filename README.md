@@ -27,6 +27,7 @@ this is a boilerplate starter kit for rapid web development. it is based on [npm
 -   auto transform es6 dependencies
 -   google page speed 100/100 ready
 -   full ie11 support
+-   zero vulnerabilities on `npm audit`
 
 ## installation
 
