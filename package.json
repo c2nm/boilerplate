@@ -75,7 +75,7 @@
         "browser-sync": "^2.27.10",
         "browserify": "^17.0.0",
         "browserify-css": "^0.15.0",
-        "cli-error-notifier": "github:vielhuber/cli-error-notifier#BRANCH-WITH-FIX",
+        "cli-error-notifier": "^3.0.1",
         "concat": "^1.0.3",
         "core-js": "^3.25.1",
         "critical": "^5.0.1",
