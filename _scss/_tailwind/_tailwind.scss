@@ -72,11 +72,17 @@
         }
     }
     .hyphenate {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        -webkit-hyphens: auto;
+        hyphens: auto;
         -ms-hyphens: auto;
         -moz-hyphens: auto;
-        hyphens: auto;
+        -webkit-hyphens: auto;
+
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+        hyphenate-limit-chars: 10 3 4;
+        -ms-hyphenate-limit-chars: 10 3 4;
+        -webkit-hyphenate-limit-before: 3;
+        -webkit-hyphenate-limit-after: 4;
     }
 }
