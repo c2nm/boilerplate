@@ -40,6 +40,12 @@
     text-align: right;
 }
 
+.is-truncated {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .owl > * + * {
     margin-top: 20rem;
 }
