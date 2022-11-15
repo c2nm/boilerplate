@@ -1,6 +1,9 @@
 {
     "scripts": {
         "🔽 css 🔽": "",
+        "css:slim": "npm-run-all --sequential css:sass css:postcss:tailwind css:postcss:autoprefixer",
+        "css:slim:dev": "npm-run-all --sequential css:sass:dev css:postcss:tailwind browsersync:reload",
+        "css:slim:watch": "onchange ./_scss/*.scss ./_scss/**/*.scss ./*.php ./**/*.php ./_php/*.php ./_php/**/*.php --initial --poll 25 --delay 0 --await-write-finish 25 -- onerror \"npm run css:slim:dev\" --title \"css:slim:watch\" --message \"build failed\" --sound mute",
         "css": "npm-run-all --sequential css:sass css:postcss:tailwind css:postcss:autoprefixer css:critical css:libs",
         "css:dev": "npm-run-all --sequential css:sass:dev css:postcss:tailwind css:libs browsersync:reload",
         "css:watch": "onchange ./_html/*.html ./_html/**/*.html ./_scss/*.scss ./_scss/**/*.scss ./*.php ./**/*.php ./_php/*.php ./_php/**/*.php ./_libs/*.css ./_libs/**/*.css --initial --poll 25 --delay 0 --await-write-finish 25 -- onerror \"npm run css:dev\" --title \"css:watch\" --message \"build failed\" --sound mute",
@@ -50,6 +53,8 @@
         "update-changelog": "auto-changelog --commit-limit false --package",
         "                                                                                                                                                                                                          ": "",
         "🔽 pipelines 🔽": "",
+        "prod:slim": "cross-env NODE_ENV=production npm-run-all --sequential css:slim js:slim",
+        "dev:slim": "cross-env NODE_ENV=development npm-run-all --parallel css:slim:watch js:slim:watch browsersync",
         "prod": "cross-env NODE_ENV=production npm-run-all --sequential copy css js html delete:files",
         "dev": "cross-env NODE_ENV=development npm-run-all --parallel copy:watch css:watch js:watch js:tests:watch html:watch browsersync"
     },
