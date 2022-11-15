@@ -1,6 +1,5 @@
 /_public/*
 !/_public/.gitkeep
-/_build/
 /node_modules/
 /vendor/
 /logs/
