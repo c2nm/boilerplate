@@ -56,10 +56,10 @@
         "update-changelog": "auto-changelog --commit-limit false --package",
         "                                                                                                                                                                                                          ": "",
         "🔽 pipelines 🔽": "",
-        "prod:slim": "cross-env NODE_ENV=production npm-run-all --sequential css:slim js:slim",
-        "dev:slim": "cross-env NODE_ENV=development npm-run-all --parallel css:slim:watch js:slim:watch browsersync",
-        "prod": "cross-env NODE_ENV=production npm-run-all --sequential copy css js html delete:files",
-        "dev": "cross-env NODE_ENV=development npm-run-all --parallel copy:watch css:watch js:watch js:tests:watch html:watch browsersync"
+        "prod": "cross-env NODE_ENV=production npm-run-all --sequential css:slim js:slim",
+        "dev": "cross-env NODE_ENV=development npm-run-all --parallel css:slim:watch js:slim:watch browsersync",
+        "prod:full": "cross-env NODE_ENV=production npm-run-all --sequential copy css js html delete:files",
+        "dev:full": "cross-env NODE_ENV=development npm-run-all --parallel copy:watch css:watch js:watch js:tests:watch html:watch browsersync"
     },
     "devDependencies": {
         "@babel/cli": "^7.18.10",
