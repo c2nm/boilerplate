@@ -1,18 +1,4 @@
-/*
-@import '_immutable/_reset';
-@import '_config/_vars';
-@import '_assorted/_common';
-@import '_immutable/_rem';
-@import '_immutable/_base';
-@import '_assorted/_fonts';
-@import '_assorted/_print';
-@import '_assorted/_scrollbars';
-@import '_modules/Test';
-@import '_assorted/_utilities';
-*/
-
-// another way to import external library css (in this example katex.min.css)
-//@import './node_modules/katex/dist/katex.min';
-
-// if you use tailwind, disable all the above
+/* option 1: tailwind css */
 @import '_tailwind/_tailwind';
+/* option 2: basic scss */
+/*@import '_basic/_basic';*/
