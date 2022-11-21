@@ -1,7 +1,13 @@
 module.exports = {
     prefix: '',
     mode: 'jit',
-    content: ['./_html/**/*.html', './**/*.php', './_js/**/*.js', './tailwind.safelist.txt'],
+    content: [
+        './_html/**/*.html',
+        './*.php',
+        './_php/*.php',
+        './_js/**/*.js',
+        './tailwind.safelist.txt'
+       ],
     theme: {
         fontFamily: {
             custom: ['"Open Sans"', 'sans-serif']
