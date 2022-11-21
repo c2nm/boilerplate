@@ -4,7 +4,7 @@ module.exports = {
     content: [
         './_html/**/*.html',
         './*.php',
-        './_php/*.php',
+        './_php/**/*.php',
         './_js/**/*.js',
         './tailwind.safelist.txt'
        ],
