@@ -19,8 +19,8 @@
         scrollbar-color: var(--color-black) var(--color-white);
         scrollbar-width: thin;
         &::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
+            width: 0.75rem;
+            height: 0.75rem;
         }
         &::-webkit-scrollbar-track {
             background-color: var(--color-white);
@@ -45,8 +45,18 @@
         }
     }
     .responsive-typography {
-        /* generated with https://clamp.font-size.app/ (min: 320px / 8px, max: 7680px / 54px) */
-        font-size: clamp(0.5rem, 0.375rem + 0.625vw, 3.375rem);
+        /* generated with https://clamp.font-size.app/ */
+
+        /* 0-1920px */
+        /* (min: 320px / 8px, max: 1920px / 18px) */
+        font-size: clamp(0.5rem, 0.375rem + 0.625vw, 1.125rem);
+        @media (min-width: 1920px) {
+            & {
+                /* 1920px-7680px */
+                /* (min: 1920px / 18px, max: 7680px / 74px) */
+                font-size: clamp(1.125rem, -0.5833rem + 1.4236vw, 6.25rem);
+            }
+        }
     }
     .responsive-typography_legacy {
         $rem_font_size_small: 8;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');*/
 
 @font-face {
     font-family: 'common-font-family-name';
@@ -71,13 +71,13 @@ input,
 select,
 textarea,
 code {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'common-font-family-name', sans-serif;
     font-weight: normal;
     font-style: normal;
 }
 
 @mixin font-heading {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'common-font-family-name', sans-serif;
     font-weight: normal;
     font-style: normal;
 }

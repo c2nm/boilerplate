@@ -50,7 +50,7 @@
         "copy": "ncp ./_assets ./$npm_package_config_build_folder/ && ncp ./_assets ./$npm_package_config_build_folder/",
         "copy:watch": "onchange ./_assets/*.* ./_assets/**/*.* --initial --poll 25 --delay 0 --await-write-finish 25 -- onerror \"npm run copy\" --title \"copy:watch\" --message \"build failed\" --sound mute",
         "delete:file": "del-cli ./$npm_package_config_build_folder/index.html",
-        "delete:files": "del-cli ./$npm_package_config_build_folder/*.* ./$npm_package_config_build_folder/**/ !./$npm_package_config_build_folder/index.html",
+        "delete:files": "del-cli ./$npm_package_config_build_folder/*.* ./$npm_package_config_build_folder/**/ !./$npm_package_config_build_folder/index.html !./$npm_package_config_build_folder/favicon.png !./$npm_package_config_build_folder/_fonts/",
         "replace": "replace-in-file \"/Copyright/g\" \"Hurray\" ./$npm_package_config_build_folder/index.html --isRegex",
         "prettier": "onchange ./_scss/*.scss ./_scss/**/*.scss ./_scss/**/**/*.scss ./_libs/*.css ./_libs/**/*.css ./_js/*.js ./_js/**/*.js ./_tests/_js/*.js ./_tests/_js/**/*.js ./_html/*.html ./_html/**/*.html ./_php/*.php ./_php/**/*.php -- prettier --write {{changed}}",
         "update-changelog": "auto-changelog --commit-limit false --package",
