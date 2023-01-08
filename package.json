@@ -28,7 +28,7 @@
         "js:minify": "terser --compress --mangle --comments false --output ./$npm_package_config_build_folder/bundle.js ./$npm_package_config_build_folder/bundle.js",
         "js:babel": "npx babel ./_js/ --out-dir ./$npm_package_config_build_folder/_js/",
         "js:libs": "find ./_libs -name \"*.js\" | xargs cat | terser --output ./$npm_package_config_build_folder/libs.js && cat ./$npm_package_config_build_folder/bundle.js >> ./$npm_package_config_build_folder/libs.js && mv ./$npm_package_config_build_folder/libs.js ./$npm_package_config_build_folder/bundle.js",
-        "js:tests": "jest --verbose --noStackTrace --no-cache || true",
+        "js:tests": "jest --verbose --noStackTrace --no-cache",
         "js:tests:watch": "onchange ./_tests/_js/*.js ./_tests/_js/**/*.js --poll 25 --delay 0 --await-write-finish 25 -- onerror \"npm run js:tests\" --title \"js:tests:watch\" --message \"build failed\" --sound mute",
         "                                                                                                                                                                                                       ": "",
         "🔽 html 🔽": "",
