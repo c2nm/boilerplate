@@ -113,6 +113,11 @@ select::-ms-expand {
     display: none;
 }
 
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
 input::-webkit-calendar-picker-indicator{
     display: none;
 }
