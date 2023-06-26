@@ -8,13 +8,15 @@ export default class Page {
     }
     async load() {
         console.log('load');
+        this.addTailwindCDN();
+        /*
         this.windowScroll();
         this.scrollToHash();
         this.initSVGInject();
         this.videoController();
         this.hideHeaderOnScroll();
         this.blogComment();
-        this.addTailwindCDN();
+        */
     }
 
     static async readyOnce() {}

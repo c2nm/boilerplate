@@ -146,5 +146,8 @@
     "description": "",
     "main": "$npm_package_config_build_folder/bundle.js",
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "@iconfu/svg-inject": "^1.2.3"
+    }
 }
