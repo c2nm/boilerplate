@@ -24,7 +24,7 @@ const themeColors = {
 module.exports = {
     prefix: '',
     mode: 'jit',
-    content: ['./_html/**/*.html', './**/*.php', './_js/**/*.js', './tailwind.safelist.txt'],
+    content: ['./_html/**/*.html', './*.php', './**/*.php', './_js/**/*.js', './tailwind.safelist.txt'],
     theme: {
         screens: {
             xs: '0px',
