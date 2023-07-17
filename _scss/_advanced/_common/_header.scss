@@ -49,6 +49,10 @@ html.header-compact {
 #header {
     box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
 
+    + #main {
+        @apply md:mt-24;
+    }
+
     .lng-link {
         @apply relative;
 
