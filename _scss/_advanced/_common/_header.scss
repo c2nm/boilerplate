@@ -132,10 +132,10 @@ html.header-compact {
         .current-menu-item,
         .current-menu-parent {
             > a {
-                @apply no-underline md:bg-tertiary md:text-primary-light opacity-100;
+                @apply no-underline md:bg-tertiary md:text-primary opacity-100;
 
                 span {
-                    @apply text-secondary-light md:text-primary-light;
+                    @apply text-secondary md:text-primary;
                 }
             }
         }
@@ -144,7 +144,7 @@ html.header-compact {
             &.hover,
             &:hover {
                 .nav-main-link {
-                    @apply no-underline md:bg-tertiary text-secondary-light md:text-primary-light;
+                    @apply no-underline md:bg-tertiary text-secondary md:text-primary;
                 }
             }
 
