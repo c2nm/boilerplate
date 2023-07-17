@@ -59,7 +59,7 @@ html.header-compact {
         &:not(:first-child) {
             &::before {
                 content: '|';
-                @apply absolute top-1.5 -left-3.5 pointer-events-none text-gray-550 -mt-1.5 mx-1.5;
+                @apply absolute top-1.5 -left-3.5 pointer-events-none text-gray-500 -mt-1.5 mx-1.5;
             }
         }
     }
@@ -132,7 +132,7 @@ html.header-compact {
         .current-menu-item,
         .current-menu-parent {
             > a {
-                @apply no-underline md:bg-tertiary-light md:text-primary-light opacity-100;
+                @apply no-underline md:bg-tertiary md:text-primary-light opacity-100;
 
                 span {
                     @apply text-secondary-light md:text-primary-light;
@@ -144,7 +144,7 @@ html.header-compact {
             &.hover,
             &:hover {
                 .nav-main-link {
-                    @apply no-underline md:bg-tertiary-light text-secondary-light md:text-primary-light;
+                    @apply no-underline md:bg-tertiary text-secondary-light md:text-primary-light;
                 }
             }
 
