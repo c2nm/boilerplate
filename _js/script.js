@@ -3,12 +3,38 @@ import hlp from 'hlp';
 
 /* internal classes */
 import Page from './Page';
+import Navigation from './Navigation';
 import Module from './Module';
 import RouteX from './RouteX';
 
 /* modular way */
 // singletons
 [Page].forEach(classes__value => {
+    // for convenience we use dynamic instead of static functions
+    let c = new classes__value();
+    if (typeof c.ready === 'function') {
+        hlp.ready().then(() => {
+            c.ready();
+        });
+    }
+    if (typeof c.load === 'function') {
+        hlp.load().then(() => {
+            c.load();
+        });
+    }
+    // also run static functions if available
+    if (typeof classes__value.readyOnce === 'function') {
+        hlp.ready().then(() => {
+            classes__value.readyOnce();
+        });
+    }
+    if (typeof classes__value.loadOnce === 'function') {
+        hlp.load().then(() => {
+            classes__value.loadOnce();
+        });
+    }
+});
+[Navigation].forEach(classes__value => {
     // for convenience we use dynamic instead of static functions
     let c = new classes__value();
     if (typeof c.ready === 'function') {
