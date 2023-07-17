@@ -12,7 +12,7 @@ export default class Navigation {
         console.log('load');
         this.initOnLoad();
         this.headerCollapse();
-        this.headerDropdownOverview();
+        //this.headerDropdownOverview();
     }
 
     initOnLoad() {
