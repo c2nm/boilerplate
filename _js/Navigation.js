@@ -1,7 +1,7 @@
 export default class Navigation {
     constructor() {
         this.breakpoint = 768;
-        this.selectorChildren = '.menu-item.menu-item-has-children';
+        this.selectorChildren = '#header .menu-item.menu-item-has-children';
         this.classHover = 'hover';
     }
 
@@ -11,6 +11,8 @@ export default class Navigation {
     async load() {
         console.log('load');
         this.initOnLoad();
+        this.headerCollapse();
+        this.headerDropdownOverview();
     }
 
     initOnLoad() {
@@ -34,5 +36,36 @@ export default class Navigation {
                 });
             });
         }
+    }
+
+    headerCollapse() {
+        let navToggle = document.querySelector('#header .nav-toggle');
+
+        if (!navToggle) {
+            return;
+        }
+
+        navToggle.addEventListener('click', e => {
+            navToggle.classList.toggle('active');
+            document.querySelector('#nav-main').classList.toggle('active');
+        });
+    }
+
+    headerDropdownOverview() {
+        let menuDropdownItems = document.querySelectorAll('.menu-item-has-children.level-0');
+
+        if (!menuDropdownItems) {
+            return;
+        }
+
+        menuDropdownItems.forEach(el => {
+            el.addEventListener('mouseover', e => {
+                document.querySelector('#header-overlay').classList.add('show');
+            });
+
+            el.addEventListener('mouseout', e => {
+                document.querySelector('#header-overlay').classList.remove('show');
+            });
+        });
     }
 }
