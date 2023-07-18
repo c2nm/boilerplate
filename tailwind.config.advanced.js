@@ -24,10 +24,16 @@ const themeColors = {
 module.exports = {
     prefix: '',
     mode: 'jit',
-    content: ['./_html/**/*.html', './*.php', './**/*.php', './_js/**/*.js', './tailwind.safelist.txt'],
+    content: [
+        './_html/**/*.html',
+        './*.php',
+        './_php/**/*.php',
+        './_js/**/*.js',
+        './tailwind.safelist.txt'
+       ],
     theme: {
         screens: {
-            xs: '0px',
+            xs: '320px',
             sm: '576px',
             md: '768px',
             lg: '1025px',
@@ -202,19 +208,18 @@ module.exports = {
             9: '9px',
             10: '10px'
         },
-        extend: {
-            fontWeight: {
-                thin: '100',
-                extralight: '200',
-                light: '300',
-                normal: '400',
-                medium: '500',
-                semibold: '600',
-                bold: '700',
-                extrabold: '800',
-                black: '900'
-            }
-        }
+        fontWeight: {
+            thin: '100',
+            extralight: '200',
+            light: '300',
+            normal: '400',
+            medium: '500',
+            semibold: '600',
+            bold: '700',
+            extrabold: '800',
+            black: '900'
+        },
+        extend: {}
     },
     variants: {},
     plugins: []
