@@ -9,6 +9,7 @@ export default class Page {
     async load() {
         console.log('load');
         this.addTailwindCDN();
+        this.addEmojiOnBlur();
         /*
         this.windowScroll();
         this.scrollToHash();
@@ -30,9 +31,27 @@ export default class Page {
         }
     }
 
+    addEmojiOnBlur() {
+        this.originalPageTitle = document.title;
+        document.addEventListener(
+            'visibilitychange',
+            () => {
+                if (document.visibilityState === 'hidden') {
+                    this.pageTitleChangingTimeout = setTimeout(() => {
+                        this.originalPageTitle = document.title;
+                        document.title = '🙁 ' + this.originalPageTitle;
+                    }, 1500);
+                } else {
+                    clearTimeout(this.pageTitleChangingTimeout);
+                    document.title = this.originalPageTitle;
+                }
+            },
+            false
+        );
+    }
+
     windowScroll() {
-        window.addEventListener('scroll', () => {
-        });
+        window.addEventListener('scroll', () => {});
     }
 
     initSVGInject() {
