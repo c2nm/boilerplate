@@ -43,7 +43,10 @@ export default class Page {
                     }, 1500);
                 } else {
                     clearTimeout(this.pageTitleChangingTimeout);
-                    document.title = this.originalPageTitle;
+                    document.title = '😁 ' + this.originalPageTitle;
+                    setTimeout(() => {
+                        document.title = this.originalPageTitle;
+                    }, 1000);
                 }
             },
             false
