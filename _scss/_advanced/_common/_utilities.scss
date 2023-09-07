@@ -47,8 +47,8 @@
         @media ( min-width: #{$rem_breakpoint_small}px ) {
             & {
                 font-size: calc(
-                        #{$rem_font_size_small}px + #{$rem_font_size_big - $rem_font_size_small} * (
-                        100vw - #{$rem_breakpoint_small}px
+                    #{$rem_font_size_small}px + #{$rem_font_size_big - $rem_font_size_small} * (
+                            100vw - #{$rem_breakpoint_small}px
                         ) / #{$rem_breakpoint_big - $rem_breakpoint_small}
                 );
             }
@@ -74,5 +74,13 @@
         -ms-hyphenate-limit-chars: 10 3 4;
         -webkit-hyphenate-limit-before: 3;
         -webkit-hyphenate-limit-after: 4;
+    }
+    .no-hyphenate {
+        overflow-wrap: normal;
+        word-wrap: normal;
+        -webkit-hyphens: manual;
+        -ms-hyphens: manual;
+        -moz-hyphens: manual;
+        hyphens: manual;
     }
 }

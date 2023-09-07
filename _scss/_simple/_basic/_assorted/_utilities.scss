@@ -7,7 +7,8 @@
     font-weight: 500;
 }
 
-.is-disabled, [disabled] {
+.is-disabled,
+[disabled] {
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
@@ -18,7 +19,8 @@
     pointer-events: auto;
 }
 
-.is-readonly, [readonly] {
+.is-readonly,
+[readonly] {
     background-color: $color-grey;
 }
 
@@ -46,17 +48,44 @@
     white-space: nowrap;
 }
 
+.no-hyphenate {
+    overflow-wrap: normal;
+    word-wrap: normal;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    -moz-hyphens: manual;
+    hyphens: manual;
+}
+
 .owl > * + * {
     margin-top: 20rem;
 }
 // if you want to exclude <input type="hidden" /> fields
-.owl > input[type="hidden"] + *:not(input[type="hidden"]) {
-    margin-top:0;
+.owl > input[type='hidden'] + *:not(input[type='hidden']) {
+    margin-top: 0;
 }
-.owl > *:not(input[type="hidden"]) + input[type="hidden"] + *:not(input[type="hidden"]),
-.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]),
-.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]),
-.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]),
-.owl > *:not(input[type="hidden"]) + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + input[type="hidden"] + *:not(input[type="hidden"]) {
+.owl > *:not(input[type='hidden']) + input[type='hidden'] + *:not(input[type='hidden']),
+.owl > *:not(input[type='hidden']) + input[type='hidden'] + input[type='hidden'] + *:not(input[type='hidden']),
+.owl
+    > *:not(input[type='hidden'])
+    + input[type='hidden']
+    + input[type='hidden']
+    + input[type='hidden']
+    + *:not(input[type='hidden']),
+.owl
+    > *:not(input[type='hidden'])
+    + input[type='hidden']
+    + input[type='hidden']
+    + input[type='hidden']
+    + input[type='hidden']
+    + *:not(input[type='hidden']),
+.owl
+    > *:not(input[type='hidden'])
+    + input[type='hidden']
+    + input[type='hidden']
+    + input[type='hidden']
+    + input[type='hidden']
+    + input[type='hidden']
+    + *:not(input[type='hidden']) {
     margin-top: 20rem;
 }
