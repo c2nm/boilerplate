@@ -3,12 +3,13 @@ import hlp from 'hlp';
 
 /* internal classes */
 import Page from './Page';
+import Navigation from './Navigation';
 import Module from './Module';
 import RouteX from './RouteX';
 
 /* modular way */
 // singletons
-[Page].forEach(classes__value => {
+[Page, Navigation].forEach(classes__value => {
     // for convenience we use dynamic instead of static functions
     let c = new classes__value();
     if (typeof c.ready === 'function') {

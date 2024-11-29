@@ -1,23 +1,18 @@
 module.exports = {
     prefix: '',
     mode: 'jit',
-    content: [
-        './_html/**/*.html',
-        './*.php',
-        './_php/**/*.php',
-        './_js/**/*.js',
-        './tailwind.safelist.txt'
-       ],
+    content: ['./_html/**/*.html', './*.php', './_php/**/*.php', './_js/**/*.js', './tailwind.safelist.txt'],
     theme: {
         fontFamily: {
             custom: ['"Open Sans"', 'sans-serif']
         },
-        colors: {
-            black: 'var(--color-black)',
-            white: 'var(--color-white)',
-            red: 'var(--color-red)'
+        extend: {
+            colors: {
+                black: 'var(--color-black)',
+                white: 'var(--color-white)',
+                red: 'var(--color-red)'
+            }
         },
-        extend: {},
         screens: {
             xs: '0px', //          0 -  639
             sm: '640px', //      640 -  767
