@@ -12,4 +12,11 @@ describe('Test group 1', () => {
         },
         3000
     );
+
+    /* this only runs this specific test
+    /*
+    test.only(
+        expect(true).toBe(false);
+    );
+    */
 });
